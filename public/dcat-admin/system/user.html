@@ -1,0 +1,2042 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge">
+
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>Admin  | 管理员</title>
+
+    <meta name="referrer" content="no-referrer"/>
+
+
+
+
+    <script src="../static/dcat-admin/dcat/plugins/vendors.min.js?v2.0.17-beta"></script><script src="../static/dcat-admin/dcat/js/dcat-app.js?v2.0.17-beta"></script>
+
+    <link rel="stylesheet" href="../static/dcat-admin/adminlte/adminlte.css?v2.0.17-beta"><link rel="stylesheet" href="../static/dcat-admin/dcat/plugins/vendors.min.css?v2.0.17-beta"><link rel="stylesheet" href="../static/dcat-admin/dcat/plugins/extensions/toastr.css?v2.0.17-beta"><link rel="stylesheet" href="../static/dcat-admin/dcat/plugins/tables/datatable/datatables.min.css?v2.0.17-beta"><link rel="stylesheet" href="../static/dcat-admin/dcat/css/dcat-app.css?v2.0.17-beta"><link rel="stylesheet" href="../static/dcat-admin/dcat/css/nunito.css?v2.0.17-beta"><link rel="stylesheet" href="../static/dcat-admin/dcat/plugins/jstree-theme/themes/proton/style.min.css?v2.0.17-beta">
+</head>
+
+
+<body
+        class="dcat-admin-body sidebar-mini layout-fixed
+    navbar-fixed-top " >
+
+<script>
+    var Dcat = CreateDcat({"pjax_container_selector":"#pjax-container","token":"lbACCWiB9xs0c0ic0RlI4K4mSGI698z4m3ctAowW","lang":{"delete_confirm":"\u786e\u8ba4\u5220\u9664?","confirm":"\u786e\u8ba4","cancel":"\u53d6\u6d88","refresh_succeeded":"\u5237\u65b0\u6210\u529f !","submit":"\u63d0\u4ea4","close":"\u5173\u95ed","selected_options":"\u5df2\u9009\u4e2d:num\u4e2a\u9009\u9879","exceed_max_item":"\u5df2\u8d85\u51fa\u6700\u5927\u53ef\u9009\u6570\u91cf","500":"\u7cfb\u7edf\u7e41\u5fd9\uff0c\u8bf7\u7a0d\u540e\u518d\u8bd5\uff01","403":"\u5bf9\u4e0d\u8d77\uff0c\u60a8\u6ca1\u6709\u6743\u9650\u8bbf\u95ee\uff0c\u8bf7\u4e0e\u7ba1\u7406\u5458\u8054\u7cfb\u3002","401":"\u8bf7\u767b\u5f55\uff01","419":"\u5bf9\u4e0d\u8d77\uff0c\u5f53\u524d\u9875\u9762\u5df2\u5931\u6548\uff0c\u8bf7\u5237\u65b0\u6d4f\u89c8\u5668\u3002"},"colors":{"info":"#3085d6","success":"#21b978","danger":"#ea5455","warning":"#dda451","indigo":"#5c6bc6","blue":"#3085d6","red":"#ea5455","orange":"#dda451","green":"#21b978","cyan":"#7367f0","purple":"#5b69bc","custom":"#59a9f8","pink":"#ff8acc","dark":"#22292f","white":"#fff","white50":"hsla(0,0%,100%,.5)","blue1":"#007ee5","blue2":"#3d97dd","orange1":"#ffcc80","orange2":"#F99037","yellow":"#edc30e","indigo-darker":"#495abf","red-darker":"#bd4147","blue-darker":"#236bb0","cyan-darker":"#6355ee","gray":"#b9c3cd","light":"#f7f7f9","tear":"#01847f","tear1":"#00b5b5","dark20":"#f6fbff","dark30":"#f4f7fa","dark35":"#e7eef7","dark40":"#ebf0f3","dark50":"#d3dde5","dark60":"#bacad6","dark70":"#b3b9bf","dark80":"#7c858e","dark85":"#5c7089","dark90":"#252d37","font":"#414750","gray-bg":"#f1f1f1","border":"#ebeff2","input-border":"#d9d9d9","background":"#eff3f8","dark-mode-bg":"#2c2c43","dark-mode-color":"#222233","dark-mode-color2":"#1e1e2d","dark-mode-font":"##a8a9bb","primary":"#586cb1","primary-darker":"#4c60a3","link":"#4c60a3"},"dark_mode":false,"sidebar_dark":false,"sidebar_light_style":"sidebar-light-primary"});
+</script>
+
+
+
+<div class="wrapper">
+    <div class="main-menu">
+        <div class="main-menu-content">
+            <aside class="main-sidebar sidebar-light-primary shadow">
+                <div class="navbar-header">
+                    <ul class="nav navbar-nav flex-row">
+                        <li class="nav-item mr-auto">
+                            <a href="http://103.39.211.179:8080/admin" class="navbar-brand waves-effect waves-light">
+                                <span class="logo-mini"><img src="../static/dcat-admin/images/logo.png"></span>
+                                <span class="logo-lg"><img src="../static/dcat-admin/images/logo.png" width="35"> &nbsp;Dcat Admin</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sidebar p-0 pb-3">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" style="padding-top: 10px">
+
+
+                        <li class="nav-item">
+                            <a  href="http://103.39.211.179:8080/admin" class="nav-link ">
+                                <i class="fa fa-fw feather icon-bar-chart-2"></i>
+                                <p>
+                                    主页
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview menu-open">
+                            <a href="#" class="nav-link">
+                                <i class="fa fa-fw feather icon-settings"></i>
+                                <p>
+                                    系统
+                                    <i class="right fa fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/auth/users" class="nav-link active">
+                                        &nbsp;<i class="fa fa-fw feather icon-circle"></i>
+                                        <p>
+                                            管理员
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/auth/roles" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-circle"></i>
+                                        <p>
+                                            角色
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/auth/permissions" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-circle"></i>
+                                        <p>
+                                            权限
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/auth/menu" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-circle"></i>
+                                        <p>
+                                            菜单
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/auth/operation-logs" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-circle"></i>
+                                        <p>
+                                            操作日志
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                        <li class="nav-item has-treeview ">
+                            <a href="#" class="nav-link">
+                                <i class="fa fa-fw fa fa-keyboard-o"></i>
+                                <p>
+                                    开发工具
+                                    <i class="right fa fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/auth/extensions" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-circle"></i>
+                                        <p>
+                                            扩展
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/helpers/scaffold" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-circle"></i>
+                                        <p>
+                                            代码生成器
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/helpers/icons" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-circle"></i>
+                                        <p>
+                                            图标
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a  href="http://103.39.211.179:8080/admin/layout" class="nav-link ">
+                                <i class="fa fa-fw fa-cubes"></i>
+                                <p>
+                                    布局
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview ">
+                            <a href="#" class="nav-link">
+                                <i class="fa fa-fw feather icon-grid"></i>
+                                <p>
+                                    列表
+                                    <i class="right fa fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/components/grid" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-menu"></i>
+                                        <p>
+                                            默认表格
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/reports" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-menu"></i>
+                                        <p>
+                                            组合表头
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/fixed-columns" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-menu"></i>
+                                        <p>
+                                            固定列
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/with-border" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-menu"></i>
+                                        <p>
+                                            边框模式+异步加载
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/tree" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-align-left"></i>
+                                        <p>
+                                            树
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/tables/selector" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-menu"></i>
+                                        <p>
+                                            筛选器
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/grid/custom" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-image"></i>
+                                        <p>
+                                            自定义视图
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/row-space" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-menu"></i>
+                                        <p>
+                                            行间距模式
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item has-treeview ">
+                            <a href="#" class="nav-link">
+                                <i class="fa fa-fw feather icon-edit"></i>
+                                <p>
+                                    表单
+                                    <i class="right fa fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/form" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-edit-1"></i>
+                                        <p>
+                                            表单字段
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/form/modal" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-edit-1"></i>
+                                        <p>
+                                            弹窗表单
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/form/step" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw  fa-list-ol"></i>
+                                        <p>
+                                            分步表单
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/form/when" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-edit-1"></i>
+                                        <p>
+                                            表单动态显示
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a  href="http://103.39.211.179:8080/admin/full" class="nav-link ">
+                                <i class="fa fa-fw fa-cut"></i>
+                                <p>
+                                    Full Page
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview ">
+                            <a href="#" class="nav-link">
+                                <i class="fa fa-fw fa-building"></i>
+                                <p>
+                                    组件
+                                    <i class="right fa fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/components/metric-cards" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw  fa  fa-line-chart"></i>
+                                        <p>
+                                            数据统计卡片
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/components/modal" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw  fa fa-clone"></i>
+                                        <p>
+                                            Modal
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/components/dropdown-menu" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw fa-list-ol"></i>
+                                        <p>
+                                            Dropdown
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/components/tab-button" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw fa-btc"></i>
+                                        <p>
+                                            Tab &amp; Button
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/components/checkbox-radio" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw fa-check-square-o"></i>
+                                        <p>
+                                            Checkbox &amp; Radio
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/components/alert" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw fa-circle-o-notch"></i>
+                                        <p>
+                                            Alert
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/components/markdown" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw fa-trademark"></i>
+                                        <p>
+                                            Markdown
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/components/tooltip" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw fa-info-circle"></i>
+                                        <p>
+                                            Tooltip
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/components/loading" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw fa-spin fa-circle-o-notch"></i>
+                                        <p>
+                                            Loading
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item has-treeview ">
+                            <a href="#" class="nav-link">
+                                <i class="fa fa-fw fa-film"></i>
+                                <p>
+                                    Data From Api
+                                    <i class="right fa fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/movies/in-theaters" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-circle"></i>
+                                        <p>
+                                            In Theaters
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/movies/coming-soon" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-circle"></i>
+                                        <p>
+                                            Coming Soon
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/movies/top250" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-circle"></i>
+                                        <p>
+                                            Top 250
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item has-treeview ">
+                            <a href="#" class="nav-link">
+                                <i class="fa fa-fw fa-underline"></i>
+                                <p>
+                                    编辑器
+                                    <i class="right fa fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/form/tinymce" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-circle"></i>
+                                        <p>
+                                            TinyMCE
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/form/markdown" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-circle"></i>
+                                        <p>
+                                            Markdown
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/extensions/ueditor" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-circle"></i>
+                                        <p>
+                                            UEditor
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </div>
+    <nav class="header-navbar navbar-expand-lg navbar
+    navbar-with-menu fixed-top
+
+        navbar-light navbar-shadow " style="top: 0;">
+
+        <div class="navbar-wrapper">
+            <div class="navbar-container content">
+                <div class="mr-auto float-left bookmark-wrapper d-flex align-items-center">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item mr-auto">
+                            <a class="nav-link menu-toggle" data-widget="pushmenu" style="cursor: pointer;">
+                                <i class="fa fa-bars font-md-2"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="navbar-collapse">
+                    <div class="mr-auto float-left bookmark-wrapper d-flex align-items-center">
+
+                    </div>
+                    <div class="float-right d-flex align-items-center">
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                &nbsp;
+                                <a style="cursor: pointer" onclick="window.open('https://github.com/jqhph/dcat-admin-demo')">
+                                    <i class="feather icon-github" style="font-size: 1.5rem"></i> DEMO源码下载
+                                </a>
+                                &nbsp; &nbsp;
+                            </li>
+                        </ul> <span style="cursor: pointer" data-toggle="modal" data-target="#admin-setting-config"><ul class="nav navbar-nav">
+     <li class="nav-item"> &nbsp;<i class="feather icon-edit" style="font-size: 1.5rem"></i> 网站设置 &nbsp;</li>
+</ul> </span><ul class="nav navbar-nav">
+                        <li class="dropdown dropdown-notification nav-item">
+                            <a class="nav-link nav-link-label" href="#" data-toggle="dropdown" aria-expanded="true"><i class="ficon feather icon-bell"></i><span class="badge badge-pill badge-primary badge-up">5</span></a>
+                            <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right ">
+                                <li class="dropdown-menu-header">
+                                    <div class="dropdown-header m-0 p-2">
+                                        <h3 class="white">5 New</h3><span class="grey darken-2">App Notifications</span>
+                                    </div>
+                                </li>
+                                <li class="scrollable-container media-list ps ps--active-y">
+                                    <a class="d-flex justify-content-between" href="javascript:void(0)">
+                                        <div class="media d-flex align-items-start">
+                                            <div class="media-left"><i class="feather icon-plus-square font-medium-5 primary"></i></div>
+                                            <div class="media-body">
+                                                <h6 class="primary media-heading">You have new order!</h6><small class="notification-text"> Are
+                                                your going to meet me
+                                                tonight?</small>
+                                            </div><small>
+                                            <time class="media-meta" datetime="2015-06-11T18:29:20+08:00">9 hours
+                                                ago</time></small>
+                                        </div>
+                                    </a><a class="d-flex justify-content-between" href="javascript:void(0)">
+                                    <div class="media d-flex align-items-start">
+                                        <div class="media-left"><i class="feather icon-download-cloud font-medium-5 success"></i></div>
+                                        <div class="media-body">
+                                            <h6 class="success media-heading red darken-1">99% Server load</h6>
+                                            <small class="notification-text">You got new order of goods.</small>
+                                        </div><small>
+                                        <time class="media-meta" datetime="2015-06-11T18:29:20+08:00">5 hour
+                                            ago</time></small>
+                                    </div>
+                                </a><a class="d-flex justify-content-between" href="javascript:void(0)">
+                                    <div class="media d-flex align-items-start">
+                                        <div class="media-left"><i class="feather icon-alert-triangle font-medium-5 danger"></i></div>
+                                        <div class="media-body">
+                                            <h6 class="danger media-heading yellow darken-3">Warning notifixation
+                                            </h6><small class="notification-text">Server have 99% CPU usage.</small>
+                                        </div><small>
+                                        <time class="media-meta" datetime="2015-06-11T18:29:20+08:00">Today</time></small>
+                                    </div>
+                                </a>
+                                    <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; right: 0px; height: 254px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 184px;"></div></div></li>
+                                <li class="dropdown-menu-footer"><a class="dropdown-item p-1 text-center" href="javascript:void(0)">Read
+                                    all notifications</a></li>
+                            </ul>
+                        </li>
+                    </ul><ul class="nav navbar-nav float-right">
+                        <li class="dropdown dropdown-user nav-item">
+                            <a class="dropdown-toggle nav-link">
+            <span class="dark-mode-switcher">
+                <i class="feather icon-moon"></i>
+            </span>
+                            </a>
+                        </li>
+                    </ul>
+
+                        <script>
+                            Dcat.darkMode.initSwitcher('.dark-mode-switcher');
+                        </script>
+                    </div>
+                    <ul class="nav navbar-nav float-right">
+
+                        <li class="dropdown dropdown-user nav-item">
+                            <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
+                                <div class="user-nav d-sm-flex d-none">
+                                    <span class="user-name text-bold-600">Administrator</span>
+                                    <span class="user-status"><i class="fa fa-circle text-success"></i> 在线</span>
+                                </div>
+                                <span>
+            <img class="round" src="../static/dcat-admin/images/default-avatar.jpg" alt="avatar" height="40" width="40" />
+        </span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a href="http://103.39.211.179:8080/admin/auth/setting" class="dropdown-item">
+                                    <i class="feather icon-user"></i> 设置
+                                </a>
+
+                                <div class="dropdown-divider"></div>
+
+                                <a class="dropdown-item" href="http://103.39.211.179:8080/admin/auth/logout">
+                                    <i class="feather icon-power"></i> 登出
+                                </a>
+                            </div>
+                        </li>
+
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <ul class="main-search-list-defaultlist d-none">
+
+    </ul>
+    <ul class="main-search-list-defaultlist-other-list d-none">
+        <li class="auto-suggestion d-flex align-items-center justify-content-between cursor-pointer">
+            <a class="d-flex align-items-center justify-content-between w-100 py-50">
+                <div class="d-flex justify-content-start"><span class="mr-75 feather icon-alert-circle"></span><span>No
+results found.</span></div>
+            </a>
+        </li>
+    </ul>
+    <script>
+        $('.menu-toggle').on('click', function () {
+            $(this).find('i').toggleClass('icon-circle icon-disc')
+        })
+    </script>
+
+    <div class="app-content content">
+        <div class="content-wrapper" id="pjax-container" style="top: 0;min-height: 900px;">
+            <style>.main-sidebar .nav-sidebar .nav-item>.nav-link {
+                border-radius: .1rem;
+            }</style>
+
+            <div class="content-header">
+                <section class="content-header breadcrumbs-top">
+                    <h1 class=" float-left">
+                        <span class="text-capitalize">管理员</span>
+                        <small>列表</small>
+                    </h1>
+
+                    <div class="breadcrumb-wrapper col-12">
+                        <ol class="breadcrumb float-right text-capitalize">
+                            <li class="breadcrumb-item"><a href="http://103.39.211.179:8080/admin"><i class="fa fa-dashboard"></i> 主页</a></li>
+                            <li class="breadcrumb-item">
+                                auth
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="">                 users
+                                </a>             </li>
+                        </ol>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                </section>
+            </div>
+
+            <div class="content-body" id="app">
+
+
+
+
+                <div class="row"><div class="col-md-12"><div class="dcat-box">
+
+                    <div class="d-block pb-0">
+                        <div class="custom-data-table-header">
+                            <div class="table-responsive">
+                                <div class="top d-block clearfix p-0">
+                                    <div class="btn-group dropdown grid-select-all-btn" style="display:none;margin-right: 3px;z-index: 100">
+                                        <button type="button" class="btn btn-white dropdown-toggle btn-mini btn-outline" data-toggle="dropdown">
+                                            <span class="d-none d-sm-inline selected"></span>
+                                            <span class="caret"></span>
+                                            <span class="sr-only"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" role="menu"><li class="dropdown-item">
+                                            <a href="#" data-name="" data-action="batch-delete" data-url="http://103.39.211.179:8080/admin/auth/users"><i class="feather icon-trash"></i> 删除</a>
+                                        </li>
+                                        </ul></div> <button data-action="refresh" class="btn btn-primary grid-refresh btn-mini btn-outline" style="margin-right:3px">
+                                    <i class="feather icon-refresh-cw"></i><span class="d-none d-sm-inline">&nbsp; 刷新</span>
+                                </button>   <style>::-ms-clear,::-ms-reveal{display: none;}</style>
+
+                                    <form action="http://103.39.211.179:8080/admin/auth/users" class="input-no-border d-md-inline-block" pjax-container style="display:none;margin-right: 16px">
+                                        <div class="table-filter">
+                                            <label style="width: 18rem">
+                                                <input
+                                                        type="search"
+                                                        class="form-control form-control-sm quick-search-input"
+                                                        placeholder="搜索"
+                                                        name="_search_"
+                                                        value=""
+                                                        auto="1"
+                                                >
+                                            </label>
+                                        </div>
+                                    </form>
+
+
+                                    <div class="pull-right" data-responsive-table-toolbar="grid-table">
+                        <span class="dropdown column-selector">
+    <button class="btn btn-primary btn-outline dropdown-toggle" data-toggle="dropdown">
+        <i class="fa fa-table"></i>
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu"><li class="dropdown-item">
+            <ul class="selectors"><div class="vs-checkbox-con vs-checkbox-primary" style="margin-right: 16px">
+        <input value="1" name="_all_" type="checkbox" checked><span class="vs-checkbox vs-checkbox-">
+          <span class="vs-checkbox--check">
+            <i class="vs-icon feather icon-check"></i>
+          </span>
+        </span>
+                <span>全部</span>
+            </div>
+            </ul></li>
+        <li class="dropdown-divider">
+        <li class="dropdown-item">
+            <ul class="selectors"><div class="vs-checkbox-con vs-checkbox-primary" style="margin-right: 16px">
+        <input value="id" class="column-select-item" type="checkbox" checked><span class="vs-checkbox vs-checkbox-">
+          <span class="vs-checkbox--check">
+            <i class="vs-icon feather icon-check"></i>
+          </span>
+        </span>
+                <span>ID</span>
+            </div><div class="vs-checkbox-con vs-checkbox-primary" style="margin-right: 16px">
+        <input value="username" class="column-select-item" type="checkbox" checked><span class="vs-checkbox vs-checkbox-">
+          <span class="vs-checkbox--check">
+            <i class="vs-icon feather icon-check"></i>
+          </span>
+        </span>
+                <span>用户名</span>
+            </div><div class="vs-checkbox-con vs-checkbox-primary" style="margin-right: 16px">
+        <input value="name" class="column-select-item" type="checkbox" checked><span class="vs-checkbox vs-checkbox-">
+          <span class="vs-checkbox--check">
+            <i class="vs-icon feather icon-check"></i>
+          </span>
+        </span>
+                <span>名称</span>
+            </div><div class="vs-checkbox-con vs-checkbox-primary" style="margin-right: 16px">
+        <input value="roles" class="column-select-item" type="checkbox" checked><span class="vs-checkbox vs-checkbox-">
+          <span class="vs-checkbox--check">
+            <i class="vs-icon feather icon-check"></i>
+          </span>
+        </span>
+                <span>角色</span>
+            </div><div class="vs-checkbox-con vs-checkbox-primary" style="margin-right: 16px">
+        <input value="permissions" class="column-select-item" type="checkbox" checked><span class="vs-checkbox vs-checkbox-">
+          <span class="vs-checkbox--check">
+            <i class="vs-icon feather icon-check"></i>
+          </span>
+        </span>
+                <span>权限</span>
+            </div><div class="vs-checkbox-con vs-checkbox-primary" style="margin-right: 16px">
+        <input value="created_at" class="column-select-item" type="checkbox" checked><span class="vs-checkbox vs-checkbox-">
+          <span class="vs-checkbox--check">
+            <i class="vs-icon feather icon-check"></i>
+          </span>
+        </span>
+                <span>创建时间</span>
+            </div><div class="vs-checkbox-con vs-checkbox-primary" style="margin-right: 16px">
+        <input value="updated_at" class="column-select-item" type="checkbox" checked><span class="vs-checkbox vs-checkbox-">
+          <span class="vs-checkbox--check">
+            <i class="vs-icon feather icon-check"></i>
+          </span>
+        </span>
+                <span>更新时间</span>
+            </div>
+            </ul></li>
+    </ul></span>
+                                        <button data-url='http://103.39.211.179:8080/admin/auth/users/create' class="btn btn-primary dialog-create btn-outline"><i class="feather icon-plus"></i><span class="d-none d-sm-inline">&nbsp; 新增</span></button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div class="table-responsive table-collapse table-wrapper complex-container table-middle mt-1">
+                        <table class="table custom-data-table data-table" id="grid-table" >
+                            <thead>
+                            <tr>
+                                <th ><div class="vs-checkbox-con vs-checkbox-primary checkbox-grid checkbox-grid-header">
+                                    <input type="checkbox" class="select-all grid-select-all">
+                                    <span class="vs-checkbox"><span class="vs-checkbox--check"><i class="vs-icon feather icon-check"></i></span></span>
+                                </div></th>
+                                <th >ID<span class='grid-column-header'>&nbsp;<a href='http://103.39.211.179:8080/admin/auth/users?_sort%5Bcolumn%5D=id&_sort%5Btype%5D=desc' class='grid-sort feather icon-arrow-up '></a></span></th>
+                                <th >用户名</th>
+                                <th >名称</th>
+                                <th >角色</th>
+                                <th >权限</th>
+                                <th >创建时间</th>
+                                <th >更新时间<span class='grid-column-header'>&nbsp;<a href='http://103.39.211.179:8080/admin/auth/users?_sort%5Bcolumn%5D=updated_at&_sort%5Btype%5D=desc' class='grid-sort feather icon-arrow-up '></a></span></th>
+                                <th class="grid__actions__">操作</th>
+                            </tr>
+                            </thead>
+
+
+                            <tbody>
+                            <tr >
+                                <td >
+                                    <div class="vs-checkbox-con vs-checkbox-primary checkbox-grid checkbox-grid-column">
+                                        <input type="checkbox" class="grid-row-checkbox" data-id="1" data-label="Administrator">
+                                        <span class="vs-checkbox"><span class="vs-checkbox--check"><i class="vs-icon feather icon-check"></i></span></span>
+                                    </div>
+                                </td>
+                                <td >
+                                    1
+                                </td>
+                                <td >
+                                    admin
+                                </td>
+                                <td >
+                                    Administrator
+                                </td>
+                                <td >
+                                    <span class='label' style='background:#586cb1'>Administrator</span>
+                                </td>
+                                <td >
+                                    <a href="javascript:void(0)" class="grid-dialog-tree" data-url="" data-title="权限" data-checked="1" data-val="">
+                                        <i class="feather icon-align-right"></i> 查看
+                                    </a><template id="dialog-tree-tpl"><div class="jstree-wrapper p-1" style="border:0"><div class="da-tree" style="margin-top:10px"></div></div>
+                                </template>
+                                </td>
+                                <td >
+                                    2019-11-11 10:09:10
+                                </td>
+                                <td >
+                                    2020-03-04 21:51:34
+                                </td>
+                                <td class="grid__actions__">
+                                    <div class="grid-dropdown-actions dropdown">
+                                        <a href="#" style="padding:0 10px;" data-toggle="dropdown">
+                                            <i class="feather icon-more-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu" style="left: -65px;">
+
+                                            <li class="dropdown-item"><a style="cursor: pointer"class="act-5g3Btb1v8BpcOkIJ"href="http://103.39.211.179:8080/admin/auth/users/1"><i class="feather icon-eye"></i> 显示</a></li>
+                                            <li class="dropdown-item"><a style="cursor: pointer"class="act-C2BvC12l6Y1mtcl9"href="http://103.39.211.179:8080/admin/auth/users/1/edit"><i class="feather icon-edit-1"></i> 编辑</a></li>
+                                            <li class="dropdown-item"><a data-url="http://103.39.211.179:8080/admin/auth/users/1/edit"style="cursor: pointer"class="quick-edit"href="javascript:void(0)"><i class="feather icon-edit"></i> 快捷编辑</a></li>
+
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr >
+                                <td >
+                                    <div class="vs-checkbox-con vs-checkbox-primary checkbox-grid checkbox-grid-column">
+                                        <input type="checkbox" class="grid-row-checkbox" data-id="2" data-label="Rebeka Schuppe Jr.">
+                                        <span class="vs-checkbox"><span class="vs-checkbox--check"><i class="vs-icon feather icon-check"></i></span></span>
+                                    </div>
+                                </td>
+                                <td >
+                                    2
+                                </td>
+                                <td >
+                                    ghuels8xMh
+                                </td>
+                                <td >
+                                    Rebeka Schuppe Jr.
+                                </td>
+                                <td >
+
+                                </td>
+                                <td >
+
+                                </td>
+                                <td >
+                                    2019-11-12 10:14:28
+                                </td>
+                                <td >
+                                    2019-11-12 10:14:29
+                                </td>
+                                <td class="grid__actions__">
+                                    <div class="grid-dropdown-actions dropdown">
+                                        <a href="#" style="padding:0 10px;" data-toggle="dropdown">
+                                            <i class="feather icon-more-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu" style="left: -65px;">
+
+                                            <li class="dropdown-item"><a style="cursor: pointer"class="act-o8FIuRJqLCEnjRWK"href="http://103.39.211.179:8080/admin/auth/users/2"><i class="feather icon-eye"></i> 显示</a></li>
+                                            <li class="dropdown-item"><a style="cursor: pointer"class="act-uJkVR5GW8opZAuYz"href="http://103.39.211.179:8080/admin/auth/users/2/edit"><i class="feather icon-edit-1"></i> 编辑</a></li>
+                                            <li class="dropdown-item"><a data-url="http://103.39.211.179:8080/admin/auth/users/2/edit"style="cursor: pointer"class="quick-edit"href="javascript:void(0)"><i class="feather icon-edit"></i> 快捷编辑</a></li>
+                                            <li class="dropdown-item"><a data-url="http://103.39.211.179:8080/admin/auth/users/2"data-message="ID - 2"data-action="delete"style="cursor: pointer"class="act-bfHfmK7VqqfbBWF7"href="javascript:void(0)"><i class="feather icon-trash"></i> 删除</a></li>
+
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr >
+                                <td >
+                                    <div class="vs-checkbox-con vs-checkbox-primary checkbox-grid checkbox-grid-column">
+                                        <input type="checkbox" class="grid-row-checkbox" data-id="3" data-label="Favian McDermott">
+                                        <span class="vs-checkbox"><span class="vs-checkbox--check"><i class="vs-icon feather icon-check"></i></span></span>
+                                    </div>
+                                </td>
+                                <td >
+                                    3
+                                </td>
+                                <td >
+                                    marianne.huelspuzW
+                                </td>
+                                <td >
+                                    Favian McDermott
+                                </td>
+                                <td >
+
+                                </td>
+                                <td >
+
+                                </td>
+                                <td >
+                                    2019-11-12 10:14:28
+                                </td>
+                                <td >
+                                    2020-05-27 20:45:28
+                                </td>
+                                <td class="grid__actions__">
+                                    <div class="grid-dropdown-actions dropdown">
+                                        <a href="#" style="padding:0 10px;" data-toggle="dropdown">
+                                            <i class="feather icon-more-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu" style="left: -65px;">
+
+                                            <li class="dropdown-item"><a style="cursor: pointer"class="act-Mevsv4JhDSMEezWw"href="http://103.39.211.179:8080/admin/auth/users/3"><i class="feather icon-eye"></i> 显示</a></li>
+                                            <li class="dropdown-item"><a style="cursor: pointer"class="act-taH3LwLeFQQPw52d"href="http://103.39.211.179:8080/admin/auth/users/3/edit"><i class="feather icon-edit-1"></i> 编辑</a></li>
+                                            <li class="dropdown-item"><a data-url="http://103.39.211.179:8080/admin/auth/users/3/edit"style="cursor: pointer"class="quick-edit"href="javascript:void(0)"><i class="feather icon-edit"></i> 快捷编辑</a></li>
+                                            <li class="dropdown-item"><a data-url="http://103.39.211.179:8080/admin/auth/users/3"data-message="ID - 3"data-action="delete"style="cursor: pointer"class="act-94igMPQNbXqHqDRj"href="javascript:void(0)"><i class="feather icon-trash"></i> 删除</a></li>
+
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr >
+                                <td >
+                                    <div class="vs-checkbox-con vs-checkbox-primary checkbox-grid checkbox-grid-column">
+                                        <input type="checkbox" class="grid-row-checkbox" data-id="4" data-label="Gail Wisozk">
+                                        <span class="vs-checkbox"><span class="vs-checkbox--check"><i class="vs-icon feather icon-check"></i></span></span>
+                                    </div>
+                                </td>
+                                <td >
+                                    4
+                                </td>
+                                <td >
+                                    buck.damoreTzvd
+                                </td>
+                                <td >
+                                    Gail Wisozk
+                                </td>
+                                <td >
+
+                                </td>
+                                <td >
+
+                                </td>
+                                <td >
+                                    2019-11-12 10:14:28
+                                </td>
+                                <td >
+                                    2019-11-12 10:14:29
+                                </td>
+                                <td class="grid__actions__">
+                                    <div class="grid-dropdown-actions dropdown">
+                                        <a href="#" style="padding:0 10px;" data-toggle="dropdown">
+                                            <i class="feather icon-more-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu" style="left: -65px;">
+
+                                            <li class="dropdown-item"><a style="cursor: pointer"class="act-dcd3Cb5Ev1sdcYue"href="http://103.39.211.179:8080/admin/auth/users/4"><i class="feather icon-eye"></i> 显示</a></li>
+                                            <li class="dropdown-item"><a style="cursor: pointer"class="act-mi3rps4Obxfcv0q8"href="http://103.39.211.179:8080/admin/auth/users/4/edit"><i class="feather icon-edit-1"></i> 编辑</a></li>
+                                            <li class="dropdown-item"><a data-url="http://103.39.211.179:8080/admin/auth/users/4/edit"style="cursor: pointer"class="quick-edit"href="javascript:void(0)"><i class="feather icon-edit"></i> 快捷编辑</a></li>
+                                            <li class="dropdown-item"><a data-url="http://103.39.211.179:8080/admin/auth/users/4"data-message="ID - 4"data-action="delete"style="cursor: pointer"class="act-LPXqHZnlE7BGrlOB"href="javascript:void(0)"><i class="feather icon-trash"></i> 删除</a></li>
+
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr >
+                                <td >
+                                    <div class="vs-checkbox-con vs-checkbox-primary checkbox-grid checkbox-grid-column">
+                                        <input type="checkbox" class="grid-row-checkbox" data-id="5" data-label="Chaya Fay">
+                                        <span class="vs-checkbox"><span class="vs-checkbox--check"><i class="vs-icon feather icon-check"></i></span></span>
+                                    </div>
+                                </td>
+                                <td >
+                                    5
+                                </td>
+                                <td >
+                                    princess.strackenxCt
+                                </td>
+                                <td >
+                                    Chaya Fay
+                                </td>
+                                <td >
+
+                                </td>
+                                <td >
+
+                                </td>
+                                <td >
+                                    2019-11-12 10:14:28
+                                </td>
+                                <td >
+                                    2019-11-12 10:14:29
+                                </td>
+                                <td class="grid__actions__">
+                                    <div class="grid-dropdown-actions dropdown">
+                                        <a href="#" style="padding:0 10px;" data-toggle="dropdown">
+                                            <i class="feather icon-more-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu" style="left: -65px;">
+
+                                            <li class="dropdown-item"><a style="cursor: pointer"class="act-lkpxa5siaYFVekvG"href="http://103.39.211.179:8080/admin/auth/users/5"><i class="feather icon-eye"></i> 显示</a></li>
+                                            <li class="dropdown-item"><a style="cursor: pointer"class="act-RjoN9UIDw0IB3Hv2"href="http://103.39.211.179:8080/admin/auth/users/5/edit"><i class="feather icon-edit-1"></i> 编辑</a></li>
+                                            <li class="dropdown-item"><a data-url="http://103.39.211.179:8080/admin/auth/users/5/edit"style="cursor: pointer"class="quick-edit"href="javascript:void(0)"><i class="feather icon-edit"></i> 快捷编辑</a></li>
+                                            <li class="dropdown-item"><a data-url="http://103.39.211.179:8080/admin/auth/users/5"data-message="ID - 5"data-action="delete"style="cursor: pointer"class="act-0T9arxFL7UCUXeP2"href="javascript:void(0)"><i class="feather icon-trash"></i> 删除</a></li>
+
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr >
+                                <td >
+                                    <div class="vs-checkbox-con vs-checkbox-primary checkbox-grid checkbox-grid-column">
+                                        <input type="checkbox" class="grid-row-checkbox" data-id="6" data-label="Prof. Mollie Cormier PhD">
+                                        <span class="vs-checkbox"><span class="vs-checkbox--check"><i class="vs-icon feather icon-check"></i></span></span>
+                                    </div>
+                                </td>
+                                <td >
+                                    6
+                                </td>
+                                <td >
+                                    lulu.koelpinNJHZ
+                                </td>
+                                <td >
+                                    Prof. Mollie Cormier PhD
+                                </td>
+                                <td >
+
+                                </td>
+                                <td >
+
+                                </td>
+                                <td >
+                                    2019-11-12 10:14:28
+                                </td>
+                                <td >
+                                    2019-11-12 10:14:29
+                                </td>
+                                <td class="grid__actions__">
+                                    <div class="grid-dropdown-actions dropdown">
+                                        <a href="#" style="padding:0 10px;" data-toggle="dropdown">
+                                            <i class="feather icon-more-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu" style="left: -65px;">
+
+                                            <li class="dropdown-item"><a style="cursor: pointer"class="act-GJY5uVvB6SNDJa4j"href="http://103.39.211.179:8080/admin/auth/users/6"><i class="feather icon-eye"></i> 显示</a></li>
+                                            <li class="dropdown-item"><a style="cursor: pointer"class="act-PZqtAuHHkWZExDEF"href="http://103.39.211.179:8080/admin/auth/users/6/edit"><i class="feather icon-edit-1"></i> 编辑</a></li>
+                                            <li class="dropdown-item"><a data-url="http://103.39.211.179:8080/admin/auth/users/6/edit"style="cursor: pointer"class="quick-edit"href="javascript:void(0)"><i class="feather icon-edit"></i> 快捷编辑</a></li>
+                                            <li class="dropdown-item"><a data-url="http://103.39.211.179:8080/admin/auth/users/6"data-message="ID - 6"data-action="delete"style="cursor: pointer"class="act-XmbaF6CkXhG8q5Q1"href="javascript:void(0)"><i class="feather icon-trash"></i> 删除</a></li>
+
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr >
+                                <td >
+                                    <div class="vs-checkbox-con vs-checkbox-primary checkbox-grid checkbox-grid-column">
+                                        <input type="checkbox" class="grid-row-checkbox" data-id="7" data-label="Tobin Haag">
+                                        <span class="vs-checkbox"><span class="vs-checkbox--check"><i class="vs-icon feather icon-check"></i></span></span>
+                                    </div>
+                                </td>
+                                <td >
+                                    7
+                                </td>
+                                <td >
+                                    kriceqneh
+                                </td>
+                                <td >
+                                    Tobin Haag
+                                </td>
+                                <td >
+
+                                </td>
+                                <td >
+
+                                </td>
+                                <td >
+                                    2019-11-12 10:14:28
+                                </td>
+                                <td >
+                                    2019-11-12 10:14:29
+                                </td>
+                                <td class="grid__actions__">
+                                    <div class="grid-dropdown-actions dropdown">
+                                        <a href="#" style="padding:0 10px;" data-toggle="dropdown">
+                                            <i class="feather icon-more-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu" style="left: -65px;">
+
+                                            <li class="dropdown-item"><a style="cursor: pointer"class="act-iRLzLIyifvL3oEHu"href="http://103.39.211.179:8080/admin/auth/users/7"><i class="feather icon-eye"></i> 显示</a></li>
+                                            <li class="dropdown-item"><a style="cursor: pointer"class="act-kI7PgaZugm3y33BZ"href="http://103.39.211.179:8080/admin/auth/users/7/edit"><i class="feather icon-edit-1"></i> 编辑</a></li>
+                                            <li class="dropdown-item"><a data-url="http://103.39.211.179:8080/admin/auth/users/7/edit"style="cursor: pointer"class="quick-edit"href="javascript:void(0)"><i class="feather icon-edit"></i> 快捷编辑</a></li>
+                                            <li class="dropdown-item"><a data-url="http://103.39.211.179:8080/admin/auth/users/7"data-message="ID - 7"data-action="delete"style="cursor: pointer"class="act-KaN5Xqzw21U722dZ"href="javascript:void(0)"><i class="feather icon-trash"></i> 删除</a></li>
+
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr >
+                                <td >
+                                    <div class="vs-checkbox-con vs-checkbox-primary checkbox-grid checkbox-grid-column">
+                                        <input type="checkbox" class="grid-row-checkbox" data-id="8" data-label="Ms. Lillian Erdman">
+                                        <span class="vs-checkbox"><span class="vs-checkbox--check"><i class="vs-icon feather icon-check"></i></span></span>
+                                    </div>
+                                </td>
+                                <td >
+                                    8
+                                </td>
+                                <td >
+                                    ghammesg3K8
+                                </td>
+                                <td >
+                                    Ms. Lillian Erdman
+                                </td>
+                                <td >
+
+                                </td>
+                                <td >
+
+                                </td>
+                                <td >
+                                    2019-11-12 10:14:28
+                                </td>
+                                <td >
+                                    2019-11-12 10:14:29
+                                </td>
+                                <td class="grid__actions__">
+                                    <div class="grid-dropdown-actions dropdown">
+                                        <a href="#" style="padding:0 10px;" data-toggle="dropdown">
+                                            <i class="feather icon-more-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu" style="left: -65px;">
+
+                                            <li class="dropdown-item"><a style="cursor: pointer"class="act-xewMttNwOuc7bv9N"href="http://103.39.211.179:8080/admin/auth/users/8"><i class="feather icon-eye"></i> 显示</a></li>
+                                            <li class="dropdown-item"><a style="cursor: pointer"class="act-M6YRy8Tn0gJGbWlj"href="http://103.39.211.179:8080/admin/auth/users/8/edit"><i class="feather icon-edit-1"></i> 编辑</a></li>
+                                            <li class="dropdown-item"><a data-url="http://103.39.211.179:8080/admin/auth/users/8/edit"style="cursor: pointer"class="quick-edit"href="javascript:void(0)"><i class="feather icon-edit"></i> 快捷编辑</a></li>
+                                            <li class="dropdown-item"><a data-url="http://103.39.211.179:8080/admin/auth/users/8"data-message="ID - 8"data-action="delete"style="cursor: pointer"class="act-bCpsXIvhMRtBUg1u"href="javascript:void(0)"><i class="feather icon-trash"></i> 删除</a></li>
+
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr >
+                                <td >
+                                    <div class="vs-checkbox-con vs-checkbox-primary checkbox-grid checkbox-grid-column">
+                                        <input type="checkbox" class="grid-row-checkbox" data-id="9" data-label="Mrs. Santina Mosciski Jr.">
+                                        <span class="vs-checkbox"><span class="vs-checkbox--check"><i class="vs-icon feather icon-check"></i></span></span>
+                                    </div>
+                                </td>
+                                <td >
+                                    9
+                                </td>
+                                <td >
+                                    emile29BRCX
+                                </td>
+                                <td >
+                                    Mrs. Santina Mosciski Jr.
+                                </td>
+                                <td >
+
+                                </td>
+                                <td >
+
+                                </td>
+                                <td >
+                                    2019-11-12 10:14:28
+                                </td>
+                                <td >
+                                    2019-11-12 10:14:29
+                                </td>
+                                <td class="grid__actions__">
+                                    <div class="grid-dropdown-actions dropdown">
+                                        <a href="#" style="padding:0 10px;" data-toggle="dropdown">
+                                            <i class="feather icon-more-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu" style="left: -65px;">
+
+                                            <li class="dropdown-item"><a style="cursor: pointer"class="act-VjZnH6ruKmhj6eTH"href="http://103.39.211.179:8080/admin/auth/users/9"><i class="feather icon-eye"></i> 显示</a></li>
+                                            <li class="dropdown-item"><a style="cursor: pointer"class="act-wNsY1QyWuEs2TwEe"href="http://103.39.211.179:8080/admin/auth/users/9/edit"><i class="feather icon-edit-1"></i> 编辑</a></li>
+                                            <li class="dropdown-item"><a data-url="http://103.39.211.179:8080/admin/auth/users/9/edit"style="cursor: pointer"class="quick-edit"href="javascript:void(0)"><i class="feather icon-edit"></i> 快捷编辑</a></li>
+                                            <li class="dropdown-item"><a data-url="http://103.39.211.179:8080/admin/auth/users/9"data-message="ID - 9"data-action="delete"style="cursor: pointer"class="act-GsLlusAnXMuvl1xC"href="javascript:void(0)"><i class="feather icon-trash"></i> 删除</a></li>
+
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr >
+                                <td >
+                                    <div class="vs-checkbox-con vs-checkbox-primary checkbox-grid checkbox-grid-column">
+                                        <input type="checkbox" class="grid-row-checkbox" data-id="10" data-label="Koby Wuckert">
+                                        <span class="vs-checkbox"><span class="vs-checkbox--check"><i class="vs-icon feather icon-check"></i></span></span>
+                                    </div>
+                                </td>
+                                <td >
+                                    10
+                                </td>
+                                <td >
+                                    teagan74lXuX
+                                </td>
+                                <td >
+                                    Koby Wuckert
+                                </td>
+                                <td >
+
+                                </td>
+                                <td >
+
+                                </td>
+                                <td >
+                                    2019-11-12 10:14:28
+                                </td>
+                                <td >
+                                    2019-11-12 10:14:29
+                                </td>
+                                <td class="grid__actions__">
+                                    <div class="grid-dropdown-actions dropdown">
+                                        <a href="#" style="padding:0 10px;" data-toggle="dropdown">
+                                            <i class="feather icon-more-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu" style="left: -65px;">
+
+                                            <li class="dropdown-item"><a style="cursor: pointer"class="act-XPHdw6U2L6VVDhGH"href="http://103.39.211.179:8080/admin/auth/users/10"><i class="feather icon-eye"></i> 显示</a></li>
+                                            <li class="dropdown-item"><a style="cursor: pointer"class="act-GQVwz3WBvBihPaXV"href="http://103.39.211.179:8080/admin/auth/users/10/edit"><i class="feather icon-edit-1"></i> 编辑</a></li>
+                                            <li class="dropdown-item"><a data-url="http://103.39.211.179:8080/admin/auth/users/10/edit"style="cursor: pointer"class="quick-edit"href="javascript:void(0)"><i class="feather icon-edit"></i> 快捷编辑</a></li>
+                                            <li class="dropdown-item"><a data-url="http://103.39.211.179:8080/admin/auth/users/10"data-message="ID - 10"data-action="delete"style="cursor: pointer"class="act-emUnv6l6Jfxcq3SX"href="javascript:void(0)"><i class="feather icon-trash"></i> 删除</a></li>
+
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr >
+                                <td >
+                                    <div class="vs-checkbox-con vs-checkbox-primary checkbox-grid checkbox-grid-column">
+                                        <input type="checkbox" class="grid-row-checkbox" data-id="11" data-label="Zakary Smith">
+                                        <span class="vs-checkbox"><span class="vs-checkbox--check"><i class="vs-icon feather icon-check"></i></span></span>
+                                    </div>
+                                </td>
+                                <td >
+                                    11
+                                </td>
+                                <td >
+                                    kbogisichortr
+                                </td>
+                                <td >
+                                    Zakary Smith
+                                </td>
+                                <td >
+
+                                </td>
+                                <td >
+
+                                </td>
+                                <td >
+                                    2019-11-12 10:14:28
+                                </td>
+                                <td >
+                                    2019-11-12 10:14:29
+                                </td>
+                                <td class="grid__actions__">
+                                    <div class="grid-dropdown-actions dropdown">
+                                        <a href="#" style="padding:0 10px;" data-toggle="dropdown">
+                                            <i class="feather icon-more-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu" style="left: -65px;">
+
+                                            <li class="dropdown-item"><a style="cursor: pointer"class="act-1yYeynobyKZsqv7F"href="http://103.39.211.179:8080/admin/auth/users/11"><i class="feather icon-eye"></i> 显示</a></li>
+                                            <li class="dropdown-item"><a style="cursor: pointer"class="act-6qCDYTkCTzP1C5i7"href="http://103.39.211.179:8080/admin/auth/users/11/edit"><i class="feather icon-edit-1"></i> 编辑</a></li>
+                                            <li class="dropdown-item"><a data-url="http://103.39.211.179:8080/admin/auth/users/11/edit"style="cursor: pointer"class="quick-edit"href="javascript:void(0)"><i class="feather icon-edit"></i> 快捷编辑</a></li>
+                                            <li class="dropdown-item"><a data-url="http://103.39.211.179:8080/admin/auth/users/11"data-message="ID - 11"data-action="delete"style="cursor: pointer"class="act-Z3LNoRJPbJiY4xix"href="javascript:void(0)"><i class="feather icon-trash"></i> 删除</a></li>
+
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr >
+                                <td >
+                                    <div class="vs-checkbox-con vs-checkbox-primary checkbox-grid checkbox-grid-column">
+                                        <input type="checkbox" class="grid-row-checkbox" data-id="12" data-label="Isobel Metz">
+                                        <span class="vs-checkbox"><span class="vs-checkbox--check"><i class="vs-icon feather icon-check"></i></span></span>
+                                    </div>
+                                </td>
+                                <td >
+                                    12
+                                </td>
+                                <td >
+                                    uheidenreichHgSx
+                                </td>
+                                <td >
+                                    Isobel Metz
+                                </td>
+                                <td >
+
+                                </td>
+                                <td >
+
+                                </td>
+                                <td >
+                                    2019-11-12 10:14:28
+                                </td>
+                                <td >
+                                    2019-11-12 10:14:29
+                                </td>
+                                <td class="grid__actions__">
+                                    <div class="grid-dropdown-actions dropdown">
+                                        <a href="#" style="padding:0 10px;" data-toggle="dropdown">
+                                            <i class="feather icon-more-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu" style="left: -65px;">
+
+                                            <li class="dropdown-item"><a style="cursor: pointer"class="act-HbMKpgGHFeAQFCwg"href="http://103.39.211.179:8080/admin/auth/users/12"><i class="feather icon-eye"></i> 显示</a></li>
+                                            <li class="dropdown-item"><a style="cursor: pointer"class="act-okTUlKtdSmh6eZRJ"href="http://103.39.211.179:8080/admin/auth/users/12/edit"><i class="feather icon-edit-1"></i> 编辑</a></li>
+                                            <li class="dropdown-item"><a data-url="http://103.39.211.179:8080/admin/auth/users/12/edit"style="cursor: pointer"class="quick-edit"href="javascript:void(0)"><i class="feather icon-edit"></i> 快捷编辑</a></li>
+                                            <li class="dropdown-item"><a data-url="http://103.39.211.179:8080/admin/auth/users/12"data-message="ID - 12"data-action="delete"style="cursor: pointer"class="act-BO8BaFynvHv5PEfY"href="javascript:void(0)"><i class="feather icon-trash"></i> 删除</a></li>
+
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr >
+                                <td >
+                                    <div class="vs-checkbox-con vs-checkbox-primary checkbox-grid checkbox-grid-column">
+                                        <input type="checkbox" class="grid-row-checkbox" data-id="13" data-label="Ike Kemmer">
+                                        <span class="vs-checkbox"><span class="vs-checkbox--check"><i class="vs-icon feather icon-check"></i></span></span>
+                                    </div>
+                                </td>
+                                <td >
+                                    13
+                                </td>
+                                <td >
+                                    zoey.ebertithj
+                                </td>
+                                <td >
+                                    Ike Kemmer
+                                </td>
+                                <td >
+
+                                </td>
+                                <td >
+
+                                </td>
+                                <td >
+                                    2019-11-12 10:14:28
+                                </td>
+                                <td >
+                                    2019-11-12 10:14:29
+                                </td>
+                                <td class="grid__actions__">
+                                    <div class="grid-dropdown-actions dropdown">
+                                        <a href="#" style="padding:0 10px;" data-toggle="dropdown">
+                                            <i class="feather icon-more-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu" style="left: -65px;">
+
+                                            <li class="dropdown-item"><a style="cursor: pointer"class="act-SXztoXW6L9EjpdVM"href="http://103.39.211.179:8080/admin/auth/users/13"><i class="feather icon-eye"></i> 显示</a></li>
+                                            <li class="dropdown-item"><a style="cursor: pointer"class="act-DWEzbxWJuGt1LoMh"href="http://103.39.211.179:8080/admin/auth/users/13/edit"><i class="feather icon-edit-1"></i> 编辑</a></li>
+                                            <li class="dropdown-item"><a data-url="http://103.39.211.179:8080/admin/auth/users/13/edit"style="cursor: pointer"class="quick-edit"href="javascript:void(0)"><i class="feather icon-edit"></i> 快捷编辑</a></li>
+                                            <li class="dropdown-item"><a data-url="http://103.39.211.179:8080/admin/auth/users/13"data-message="ID - 13"data-action="delete"style="cursor: pointer"class="act-fhHiBA4kNrRUK0fd"href="javascript:void(0)"><i class="feather icon-trash"></i> 删除</a></li>
+
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr >
+                                <td >
+                                    <div class="vs-checkbox-con vs-checkbox-primary checkbox-grid checkbox-grid-column">
+                                        <input type="checkbox" class="grid-row-checkbox" data-id="14" data-label="Brayan Gorczany">
+                                        <span class="vs-checkbox"><span class="vs-checkbox--check"><i class="vs-icon feather icon-check"></i></span></span>
+                                    </div>
+                                </td>
+                                <td >
+                                    14
+                                </td>
+                                <td >
+                                    jerry.hermann8cah
+                                </td>
+                                <td >
+                                    Brayan Gorczany
+                                </td>
+                                <td >
+
+                                </td>
+                                <td >
+
+                                </td>
+                                <td >
+                                    2019-11-12 10:14:28
+                                </td>
+                                <td >
+                                    2019-11-12 10:14:29
+                                </td>
+                                <td class="grid__actions__">
+                                    <div class="grid-dropdown-actions dropdown">
+                                        <a href="#" style="padding:0 10px;" data-toggle="dropdown">
+                                            <i class="feather icon-more-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu" style="left: -65px;">
+
+                                            <li class="dropdown-item"><a style="cursor: pointer"class="act-oY27RsxXVMwGv5jW"href="http://103.39.211.179:8080/admin/auth/users/14"><i class="feather icon-eye"></i> 显示</a></li>
+                                            <li class="dropdown-item"><a style="cursor: pointer"class="act-UxoFuN5FUlfZREh5"href="http://103.39.211.179:8080/admin/auth/users/14/edit"><i class="feather icon-edit-1"></i> 编辑</a></li>
+                                            <li class="dropdown-item"><a data-url="http://103.39.211.179:8080/admin/auth/users/14/edit"style="cursor: pointer"class="quick-edit"href="javascript:void(0)"><i class="feather icon-edit"></i> 快捷编辑</a></li>
+                                            <li class="dropdown-item"><a data-url="http://103.39.211.179:8080/admin/auth/users/14"data-message="ID - 14"data-action="delete"style="cursor: pointer"class="act-CA0VYT1H5NxjxGCD"href="javascript:void(0)"><i class="feather icon-trash"></i> 删除</a></li>
+
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr >
+                                <td >
+                                    <div class="vs-checkbox-con vs-checkbox-primary checkbox-grid checkbox-grid-column">
+                                        <input type="checkbox" class="grid-row-checkbox" data-id="15" data-label="Niko Reichel Jr.">
+                                        <span class="vs-checkbox"><span class="vs-checkbox--check"><i class="vs-icon feather icon-check"></i></span></span>
+                                    </div>
+                                </td>
+                                <td >
+                                    15
+                                </td>
+                                <td >
+                                    wuckert.laurencxIP
+                                </td>
+                                <td >
+                                    Niko Reichel Jr.
+                                </td>
+                                <td >
+
+                                </td>
+                                <td >
+
+                                </td>
+                                <td >
+                                    2019-11-12 10:14:28
+                                </td>
+                                <td >
+                                    2019-11-12 10:14:29
+                                </td>
+                                <td class="grid__actions__">
+                                    <div class="grid-dropdown-actions dropdown">
+                                        <a href="#" style="padding:0 10px;" data-toggle="dropdown">
+                                            <i class="feather icon-more-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu" style="left: -65px;">
+
+                                            <li class="dropdown-item"><a style="cursor: pointer"class="act-EDW74h43LO9JcNEo"href="http://103.39.211.179:8080/admin/auth/users/15"><i class="feather icon-eye"></i> 显示</a></li>
+                                            <li class="dropdown-item"><a style="cursor: pointer"class="act-nBxOx3NszlWUYDl6"href="http://103.39.211.179:8080/admin/auth/users/15/edit"><i class="feather icon-edit-1"></i> 编辑</a></li>
+                                            <li class="dropdown-item"><a data-url="http://103.39.211.179:8080/admin/auth/users/15/edit"style="cursor: pointer"class="quick-edit"href="javascript:void(0)"><i class="feather icon-edit"></i> 快捷编辑</a></li>
+                                            <li class="dropdown-item"><a data-url="http://103.39.211.179:8080/admin/auth/users/15"data-message="ID - 15"data-action="delete"style="cursor: pointer"class="act-dBAzv4nhzyW4rDe0"href="javascript:void(0)"><i class="feather icon-trash"></i> 删除</a></li>
+
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr >
+                                <td >
+                                    <div class="vs-checkbox-con vs-checkbox-primary checkbox-grid checkbox-grid-column">
+                                        <input type="checkbox" class="grid-row-checkbox" data-id="16" data-label="Jaylan Hauck">
+                                        <span class="vs-checkbox"><span class="vs-checkbox--check"><i class="vs-icon feather icon-check"></i></span></span>
+                                    </div>
+                                </td>
+                                <td >
+                                    16
+                                </td>
+                                <td >
+                                    pearlie14EPMg
+                                </td>
+                                <td >
+                                    Jaylan Hauck
+                                </td>
+                                <td >
+
+                                </td>
+                                <td >
+
+                                </td>
+                                <td >
+                                    2019-11-12 10:14:28
+                                </td>
+                                <td >
+                                    2019-11-12 10:14:29
+                                </td>
+                                <td class="grid__actions__">
+                                    <div class="grid-dropdown-actions dropdown">
+                                        <a href="#" style="padding:0 10px;" data-toggle="dropdown">
+                                            <i class="feather icon-more-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu" style="left: -65px;">
+
+                                            <li class="dropdown-item"><a style="cursor: pointer"class="act-ZAPoL9ZltudH4bNg"href="http://103.39.211.179:8080/admin/auth/users/16"><i class="feather icon-eye"></i> 显示</a></li>
+                                            <li class="dropdown-item"><a style="cursor: pointer"class="act-WBmxcZOxWZga8dZ6"href="http://103.39.211.179:8080/admin/auth/users/16/edit"><i class="feather icon-edit-1"></i> 编辑</a></li>
+                                            <li class="dropdown-item"><a data-url="http://103.39.211.179:8080/admin/auth/users/16/edit"style="cursor: pointer"class="quick-edit"href="javascript:void(0)"><i class="feather icon-edit"></i> 快捷编辑</a></li>
+                                            <li class="dropdown-item"><a data-url="http://103.39.211.179:8080/admin/auth/users/16"data-message="ID - 16"data-action="delete"style="cursor: pointer"class="act-De19IWlSpJbJbHVX"href="javascript:void(0)"><i class="feather icon-trash"></i> 删除</a></li>
+
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr >
+                                <td >
+                                    <div class="vs-checkbox-con vs-checkbox-primary checkbox-grid checkbox-grid-column">
+                                        <input type="checkbox" class="grid-row-checkbox" data-id="17" data-label="Mable Durgan III">
+                                        <span class="vs-checkbox"><span class="vs-checkbox--check"><i class="vs-icon feather icon-check"></i></span></span>
+                                    </div>
+                                </td>
+                                <td >
+                                    17
+                                </td>
+                                <td >
+                                    lura.hillsZTL1
+                                </td>
+                                <td >
+                                    Mable Durgan III
+                                </td>
+                                <td >
+
+                                </td>
+                                <td >
+
+                                </td>
+                                <td >
+                                    2019-11-12 10:14:28
+                                </td>
+                                <td >
+                                    2019-11-12 10:14:29
+                                </td>
+                                <td class="grid__actions__">
+                                    <div class="grid-dropdown-actions dropdown">
+                                        <a href="#" style="padding:0 10px;" data-toggle="dropdown">
+                                            <i class="feather icon-more-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu" style="left: -65px;">
+
+                                            <li class="dropdown-item"><a style="cursor: pointer"class="act-W78OqgxIqvy8JQSg"href="http://103.39.211.179:8080/admin/auth/users/17"><i class="feather icon-eye"></i> 显示</a></li>
+                                            <li class="dropdown-item"><a style="cursor: pointer"class="act-iXyCVW4ymddeKjAr"href="http://103.39.211.179:8080/admin/auth/users/17/edit"><i class="feather icon-edit-1"></i> 编辑</a></li>
+                                            <li class="dropdown-item"><a data-url="http://103.39.211.179:8080/admin/auth/users/17/edit"style="cursor: pointer"class="quick-edit"href="javascript:void(0)"><i class="feather icon-edit"></i> 快捷编辑</a></li>
+                                            <li class="dropdown-item"><a data-url="http://103.39.211.179:8080/admin/auth/users/17"data-message="ID - 17"data-action="delete"style="cursor: pointer"class="act-IYsQe8HURqpfYZdf"href="javascript:void(0)"><i class="feather icon-trash"></i> 删除</a></li>
+
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr >
+                                <td >
+                                    <div class="vs-checkbox-con vs-checkbox-primary checkbox-grid checkbox-grid-column">
+                                        <input type="checkbox" class="grid-row-checkbox" data-id="18" data-label="Jayde Bartell">
+                                        <span class="vs-checkbox"><span class="vs-checkbox--check"><i class="vs-icon feather icon-check"></i></span></span>
+                                    </div>
+                                </td>
+                                <td >
+                                    18
+                                </td>
+                                <td >
+                                    darius.willmsiZBf
+                                </td>
+                                <td >
+                                    Jayde Bartell
+                                </td>
+                                <td >
+
+                                </td>
+                                <td >
+
+                                </td>
+                                <td >
+                                    2019-11-12 10:14:28
+                                </td>
+                                <td >
+                                    2019-11-12 10:14:29
+                                </td>
+                                <td class="grid__actions__">
+                                    <div class="grid-dropdown-actions dropdown">
+                                        <a href="#" style="padding:0 10px;" data-toggle="dropdown">
+                                            <i class="feather icon-more-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu" style="left: -65px;">
+
+                                            <li class="dropdown-item"><a style="cursor: pointer"class="act-iwHlUFZrMdRd3b97"href="http://103.39.211.179:8080/admin/auth/users/18"><i class="feather icon-eye"></i> 显示</a></li>
+                                            <li class="dropdown-item"><a style="cursor: pointer"class="act-cHUMdvRmEsdKPhJj"href="http://103.39.211.179:8080/admin/auth/users/18/edit"><i class="feather icon-edit-1"></i> 编辑</a></li>
+                                            <li class="dropdown-item"><a data-url="http://103.39.211.179:8080/admin/auth/users/18/edit"style="cursor: pointer"class="quick-edit"href="javascript:void(0)"><i class="feather icon-edit"></i> 快捷编辑</a></li>
+                                            <li class="dropdown-item"><a data-url="http://103.39.211.179:8080/admin/auth/users/18"data-message="ID - 18"data-action="delete"style="cursor: pointer"class="act-OWtuRhspuy6NJJ6q"href="javascript:void(0)"><i class="feather icon-trash"></i> 删除</a></li>
+
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr >
+                                <td >
+                                    <div class="vs-checkbox-con vs-checkbox-primary checkbox-grid checkbox-grid-column">
+                                        <input type="checkbox" class="grid-row-checkbox" data-id="19" data-label="Riley Farrell">
+                                        <span class="vs-checkbox"><span class="vs-checkbox--check"><i class="vs-icon feather icon-check"></i></span></span>
+                                    </div>
+                                </td>
+                                <td >
+                                    19
+                                </td>
+                                <td >
+                                    nettie.wiza9Fvs
+                                </td>
+                                <td >
+                                    Riley Farrell
+                                </td>
+                                <td >
+
+                                </td>
+                                <td >
+
+                                </td>
+                                <td >
+                                    2019-11-12 10:14:28
+                                </td>
+                                <td >
+                                    2019-11-12 10:14:29
+                                </td>
+                                <td class="grid__actions__">
+                                    <div class="grid-dropdown-actions dropdown">
+                                        <a href="#" style="padding:0 10px;" data-toggle="dropdown">
+                                            <i class="feather icon-more-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu" style="left: -65px;">
+
+                                            <li class="dropdown-item"><a style="cursor: pointer"class="act-0SvqoJbKnU9uU6Th"href="http://103.39.211.179:8080/admin/auth/users/19"><i class="feather icon-eye"></i> 显示</a></li>
+                                            <li class="dropdown-item"><a style="cursor: pointer"class="act-WTbbLZRaX2tCXPE9"href="http://103.39.211.179:8080/admin/auth/users/19/edit"><i class="feather icon-edit-1"></i> 编辑</a></li>
+                                            <li class="dropdown-item"><a data-url="http://103.39.211.179:8080/admin/auth/users/19/edit"style="cursor: pointer"class="quick-edit"href="javascript:void(0)"><i class="feather icon-edit"></i> 快捷编辑</a></li>
+                                            <li class="dropdown-item"><a data-url="http://103.39.211.179:8080/admin/auth/users/19"data-message="ID - 19"data-action="delete"style="cursor: pointer"class="act-r3NmVDjJExkHzkER"href="javascript:void(0)"><i class="feather icon-trash"></i> 删除</a></li>
+
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr >
+                                <td >
+                                    <div class="vs-checkbox-con vs-checkbox-primary checkbox-grid checkbox-grid-column">
+                                        <input type="checkbox" class="grid-row-checkbox" data-id="20" data-label="Brenden Champlin I">
+                                        <span class="vs-checkbox"><span class="vs-checkbox--check"><i class="vs-icon feather icon-check"></i></span></span>
+                                    </div>
+                                </td>
+                                <td >
+                                    20
+                                </td>
+                                <td >
+                                    grogahnZNUX
+                                </td>
+                                <td >
+                                    Brenden Champlin I
+                                </td>
+                                <td >
+
+                                </td>
+                                <td >
+
+                                </td>
+                                <td >
+                                    2019-11-12 10:14:28
+                                </td>
+                                <td >
+                                    2019-11-12 10:14:29
+                                </td>
+                                <td class="grid__actions__">
+                                    <div class="grid-dropdown-actions dropdown">
+                                        <a href="#" style="padding:0 10px;" data-toggle="dropdown">
+                                            <i class="feather icon-more-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu" style="left: -65px;">
+
+                                            <li class="dropdown-item"><a style="cursor: pointer"class="act-PilbiEv2fczPCpm5"href="http://103.39.211.179:8080/admin/auth/users/20"><i class="feather icon-eye"></i> 显示</a></li>
+                                            <li class="dropdown-item"><a style="cursor: pointer"class="act-cMULXaLHb89ITrIP"href="http://103.39.211.179:8080/admin/auth/users/20/edit"><i class="feather icon-edit-1"></i> 编辑</a></li>
+                                            <li class="dropdown-item"><a data-url="http://103.39.211.179:8080/admin/auth/users/20/edit"style="cursor: pointer"class="quick-edit"href="javascript:void(0)"><i class="feather icon-edit"></i> 快捷编辑</a></li>
+                                            <li class="dropdown-item"><a data-url="http://103.39.211.179:8080/admin/auth/users/20"data-message="ID - 20"data-action="delete"style="cursor: pointer"class="act-n2EOX75Wd9DvBEZy"href="javascript:void(0)"><i class="feather icon-trash"></i> 删除</a></li>
+
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+
+                    <div class="box-footer d-block clearfix ">
+                        <span class='d-none d-sm-inline' style="line-height:33px;color:#7c858e">从 <b>1</b> 到 <b>20</b> ，总共 <b>10001</b> 条</span><ul class="pagination pagination-sm no-margin pull-right shadow-100" style="border-radius: 1.5rem">
+                        <!-- Previous Page Link -->
+                        <li class="page-item previous disabled"><span class="page-link"></span></li>
+
+                        <!-- Pagination Elements -->
+                        <!-- "Three Dots" Separator -->
+
+                        <!-- Array Of Links -->
+                        <li class="page-item active"><span class="page-link">1</span></li>
+                        <li class="page-item"><a class="page-link" href="http://103.39.211.179:8080/admin/auth/users?page=2">2</a></li>
+                        <li class="page-item"><a class="page-link" href="http://103.39.211.179:8080/admin/auth/users?page=3">3</a></li>
+                        <li class="page-item"><a class="page-link" href="http://103.39.211.179:8080/admin/auth/users?page=4">4</a></li>
+                        <li class="page-item"><a class="page-link" href="http://103.39.211.179:8080/admin/auth/users?page=5">5</a></li>
+                        <li class="page-item"><a class="page-link" href="http://103.39.211.179:8080/admin/auth/users?page=6">6</a></li>
+                        <li class="page-item"><a class="page-link" href="http://103.39.211.179:8080/admin/auth/users?page=7">7</a></li>
+                        <li class="page-item"><a class="page-link" href="http://103.39.211.179:8080/admin/auth/users?page=8">8</a></li>
+                        <!-- "Three Dots" Separator -->
+                        <li class="page-item disabled"><span class="page-link">...</span></li>
+
+                        <!-- Array Of Links -->
+                        <!-- "Three Dots" Separator -->
+
+                        <!-- Array Of Links -->
+                        <li class="page-item"><a class="page-link" href="http://103.39.211.179:8080/admin/auth/users?page=500">500</a></li>
+                        <li class="page-item"><a class="page-link" href="http://103.39.211.179:8080/admin/auth/users?page=501">501</a></li>
+
+                        <!-- Next Page Link -->
+                        <li class="page-item next"><a class="page-link" href="http://103.39.211.179:8080/admin/auth/users?page=2" rel="next"></a></li>
+                    </ul>
+                        <label class="pull-right d-none d-sm-inline" style="margin-right: 10px">
+    <span class="dropup" style="display:inline-block">
+        <a id="" class="dropdown-toggle btn btn-sm btn-white waves-effect" data-toggle="dropdown" href="javascript:void(0)">
+            <stub>20</stub><span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu"><li class="dropdown-item"><a href="http://103.39.211.179:8080/admin/auth/users?per_page=10">10</a></li><li class="dropdown-item"><a href="http://103.39.211.179:8080/admin/auth/users?per_page=20">20</a></li><li class="dropdown-item"><a href="http://103.39.211.179:8080/admin/auth/users?per_page=30">30</a></li><li class="dropdown-item"><a href="http://103.39.211.179:8080/admin/auth/users?per_page=50">50</a></li><li class="dropdown-item"><a href="http://103.39.211.179:8080/admin/auth/users?per_page=100">100</a></li><li class="dropdown-item"><a href="http://103.39.211.179:8080/admin/auth/users?per_page=200">200</a></li></ul></span>
+                        </label>
+                    </div>
+
+
+                </div>
+
+
+                </div></div>
+
+
+
+
+            </div>
+
+            <script data-exec-on-popstate>
+                (function () {
+                    try {
+
+                    } catch (e) {
+                        console.error(e)
+                    }
+                })();
+                Dcat.ready(function () {
+                    try {
+                        (function () {
+                            var target = $('#admin-setting-config'), body = target.find('.modal-body');
+                            target.on('modal:load', function () {
+                                Dcat.helpers.asyncRender('http://103.39.211.179:8080/admin/dcat-api/render?_current_=http%3A%2F%2F103.39.211.179%3A8080%2Fadmin%2Fauth%2Fusers%3F&renderable=App_Admin_Forms_AdminSetting', function (html) {
+                                    body.html(html);
+
+
+
+                                    target.trigger('modal:loaded');
+                                });
+                            });
+                            target.on('show.bs.modal', function (event) {
+                                body.html('<div style="min-height:150px"></div>').loading();
+
+                                setTimeout(function () {
+                                    target.trigger('modal:load')
+                                }, 10);
+                            });
+                        })();;
+                        Dcat.token = "lbACCWiB9xs0c0ic0RlI4K4mSGI698z4m3ctAowW";;
+                        var selector = Dcat.RowSelector({
+                            checkboxSelector: '.grid-row-checkbox',
+                            selectAllSelector: '.grid-select-all',
+                            clickRow: false,
+                            background: '#f6fbff',
+                        });
+                        Dcat.grid.addSelector(selector, '');;
+                        (function () {window.resolveDialogTree = function (options) {
+                            var tpl = $('#dialog-tree-tpl').html(),
+                                t = $(this),
+                                val = t.data('val'),
+                                url = t.data('url'),
+                                title = t.data('title'),
+                                ckall = t.data('checked'),
+                                idx,
+                                loading;
+
+                            val = val ? String(val).split(',') : [];
+
+                            if (url) {
+                                if (loading) return;
+                                loading = 1;
+
+                                t.buttonLoading();
+                                $.ajax(url, {data: {value: val}}).then(function (resp) {
+                                    loading = 0;
+                                    t.buttonLoading(false);
+
+                                    if (!resp.status) {
+                                        return Dcat.error(resp.message || '系统繁忙，请稍后再试');
+                                    }
+
+                                    open(resp.value);
+                                });
+                            } else {
+                                open(val);
+                            }
+
+                            function open(val) {
+                                options.config.core.data = formatNodes(val, options.nodes);
+
+                                idx = layer.open({
+                                    type: 1,
+                                    area: options.area,
+                                    content: tpl,
+                                    title: title,
+                                    success: function (a, idx) {
+                                        var tree = $('#layui-layer'+idx).find('.da-tree');
+
+                                        tree.on("loaded.jstree", function () {
+                                            tree.jstree('open_all');
+                                        }).jstree(options.config);
+                                    }
+                                });
+
+                                $(document).one('pjax:complete', function () {
+                                    layer.close(idx);
+                                });
+                            }
+
+                            function formatNodes(value, all) {
+                                var idColumn = options.columns.id,
+                                    textColumn = options.columns.text,
+                                    parentColumn = options.columns.parent,
+                                    parentIds = [], nodes = [], i, v, parentId;
+
+                                for (i in all) {
+                                    v = all[i];
+                                    if (!v[idColumn]) continue;
+
+                                    parentId = v[parentColumn] || '#';
+                                    if (!parentId) {
+                                        parentId = '#';
+                                    } else {
+                                        parentIds.push(parentId);
+                                    }
+
+                                    v['state'] = {'disabled': true};
+
+                                    if (ckall || (value && Dcat.helpers.inObject(value, v[idColumn]))) {
+                                        v['state']['selected'] = true;
+                                    }
+
+                                    nodes.push({
+                                        'id'     : v[idColumn],
+                                        'text'   : v[textColumn] || null,
+                                        'parent' : parentId,
+                                        'state'  : v['state'],
+                                    });
+                                }
+
+                                return nodes;
+                            }
+                        }
+                        })();;
+                        (function () {var nodes = [{"id":1,"name":"Auth management","slug":"auth-management","http_method":[],"http_path":[""],"order":1,"parent_id":0,"created_at":"2019-11-11 10:09:10","updated_at":"2020-03-28 15:38:04"},{"id":4,"name":"Permissions","slug":"permissions","http_method":[],"http_path":["\/auth\/permissions*"],"order":2,"parent_id":1,"created_at":"2019-11-11 10:09:10","updated_at":"2020-03-28 15:38:04"},{"id":3,"name":"Roles","slug":"roles","http_method":[],"http_path":["\/auth\/roles*"],"order":3,"parent_id":1,"created_at":"2019-11-11 10:09:10","updated_at":"2020-03-28 15:38:04"},{"id":2,"name":"Users","slug":"users","http_method":[],"http_path":["\/auth\/users*"],"order":4,"parent_id":1,"created_at":"2019-11-11 10:09:10","updated_at":"2020-03-28 15:38:04"},{"id":6,"name":"Operation log","slug":"operation-log","http_method":[],"http_path":["\/auth\/logs*"],"order":5,"parent_id":1,"created_at":"2019-11-11 10:09:10","updated_at":"2020-03-28 15:38:04"},{"id":5,"name":"Menu","slug":"menu","http_method":[],"http_path":["\/auth\/menu*"],"order":6,"parent_id":1,"created_at":"2019-11-11 10:09:10","updated_at":"2020-03-28 15:38:04"},{"id":11,"name":"\u5185\u5bb9\u7ba1\u7406","slug":"\u5185\u5bb9\u7ba1\u7406","http_method":null,"http_path":[""],"order":7,"parent_id":0,"created_at":"2020-03-03 13:36:52","updated_at":"2020-03-28 15:38:04"},{"id":12,"name":"\u5e7f\u544a\u7ba1\u7406","slug":"\u5e7f\u544a\u7ba1\u7406","http_method":null,"http_path":[""],"order":8,"parent_id":11,"created_at":"2020-03-03 13:37:35","updated_at":"2020-03-28 15:38:04"},{"id":15,"name":"\u5e7f\u544a\u5217\u8868","slug":"\u5e7f\u544a\u5217\u8868","http_method":null,"http_path":[""],"order":9,"parent_id":12,"created_at":"2020-03-03 13:40:05","updated_at":"2020-03-28 15:38:04"},{"id":16,"name":"\u5e7f\u544a\u8bbe\u7f6e","slug":"\u5e7f\u544a\u8bbe\u7f6e","http_method":null,"http_path":[""],"order":10,"parent_id":12,"created_at":"2020-03-03 13:40:13","updated_at":"2020-03-28 15:38:04"},{"id":13,"name":"\u5546\u6237\u7ba1\u7406","slug":"\u5546\u6237\u7ba1\u7406","http_method":null,"http_path":[""],"order":11,"parent_id":11,"created_at":"2020-03-03 13:38:14","updated_at":"2020-03-28 15:38:04"},{"id":14,"name":"\u8bc4\u8bba\u7ba1\u7406","slug":"\u8bc4\u8bba\u7ba1\u7406","http_method":null,"http_path":[""],"order":12,"parent_id":11,"created_at":"2020-03-03 13:38:44","updated_at":"2020-03-28 15:38:04"},{"id":7,"name":"\u6d4b\u8bd5","slug":"test","http_method":null,"http_path":[""],"order":13,"parent_id":0,"created_at":"2020-03-03 13:34:44","updated_at":"2020-03-28 15:38:04"},{"id":8,"name":"\u6d4b\u8bd51","slug":"test1","http_method":null,"http_path":[""],"order":14,"parent_id":7,"created_at":"2020-03-03 13:34:47","updated_at":"2020-03-28 15:38:04"},{"id":9,"name":"\u6d4b\u8bd52","slug":"test2","http_method":null,"http_path":[""],"order":15,"parent_id":7,"created_at":"2020-03-03 13:34:50","updated_at":"2020-03-28 15:38:04"},{"id":10,"name":"\u6d4b\u8bd53","slug":"test3","http_method":null,"http_path":[""],"order":16,"parent_id":7,"created_at":"2020-03-03 13:35:30","updated_at":"2020-03-28 15:38:04"}];
+                            var options = {"plugins":["checkbox","types"],"core":{"check_callback":true,"themes":{"name":"proton","responsive":true}},"checkbox":{"keep_selected_style":false},"types":{"default":{"icon":false}}};
+                            var area = ["580px","600px"];
+
+                            $('.grid-dialog-tree').off('click').on('click', function () {
+                                resolveDialogTree.call(this, {config: options, nodes: nodes, area: area, columns: {"id":"id","text":"name","parent":"parent_id"}});
+                            });
+                        })();;
+                        (function () {
+                            var opts = {"title":"\u7f16\u8f91","area":["700px","670px"],"defaultUrl":null,"buttonSelector":".quick-edit","query":"_dialog_form_","lang":{"submit":"\u63d0\u4ea4","reset":"\u91cd\u7f6e"},"forceRefresh":true,"reset":true};
+
+                            opts.success = function (success, response) {
+                                Dcat.reload()
+                            };
+                            opts.error = function (success, response) {
+
+                            };
+                            opts.saved = function (success, response) {
+
+                            };
+
+                            Dcat.DialogForm(opts);
+                        })();;
+                        (function () {$(document).off('change', '.grid-row-checkbox').on('change', '.grid-row-checkbox', function () {
+                            var btn = $('.grid-select-all-btn'), selected = Dcat.grid.selectedRows('').length;
+                            if (selected) {
+                                btn.show()
+                            } else {
+                                btn.hide()
+                            }
+                            setTimeout(function () {
+                                btn.find('.selected').html("已选择 {n} 项".replace('{n}', selected));
+                            }, 50)
+                        });
+                        })();;
+                        (function () {
+                            var inputting = false,
+                                $ipt = $('input.quick-search-input'),
+                                val = $ipt.val(),
+                                ignoreKeys = [16, 17, 18, 20, 35, 36, 37, 38, 39, 40, 45, 144],
+                                auto = $ipt.attr('auto');
+
+                            var submit = Dcat.helpers.debounce(function (input) {
+                                inputting || $(input).parents('form').submit()
+                            }, 1200);
+
+                            function toggleBtn() {
+                                var t = $(this),
+                                    btn = t.parent().parent().find('.quick-search-clear');
+
+                                if (t.val()) {
+                                    btn.css({color: '#333', cursor: 'pointer'});
+                                } else {
+                                    btn.css({color: '#fff', cursor: 'none'});
+                                }
+                                return false;
+                            }
+
+                            $ipt.on('focus', toggleBtn)
+                                .on('mousemove', toggleBtn)
+                                .on('mouseout', toggleBtn)
+                                .on('compositionstart', function(){
+                                    inputting = true
+                                })
+                                .on('compositionend', function() {
+                                    inputting = false
+                                });
+
+                            if (auto > 0) {
+                                $ipt.on('keyup', function (e) {
+                                    toggleBtn.apply(this);
+
+                                    ignoreKeys.indexOf(e.keyCode) == -1 && submit(this)
+                                })
+                            }
+
+                            val !== '' && $ipt.val('').focus().val(val);
+
+                            $('.quick-search-clear').on('click', function () {
+                                $(this).parent().find('.quick-search-input').val('');
+
+                                $(this).closest('form').submit();
+                            });
+                        })();
+                        (function () {$('.column-selector input[name="_all_"]').on('change', function () {
+                            $(this).parents('.column-selector').find('.column-select-item').prop('checked', this.checked).change()
+                        });
+
+                            var submit = Dcat.helpers.debounce(function ($this) {
+                                var defaults = ["id","username","name","roles","permissions","created_at","updated_at"];
+                                var selected = [];
+                                var $parent = $this.parents('.column-selector');
+                                var column = '_columns_'
+
+                                $parent.find('.column-select-item:checked').each(function () {
+                                    selected.push($(this).val());
+                                });
+
+                                if (selected.length == 0) {
+                                    return;
+                                }
+
+                                var url = new URL(location);
+
+                                if (selected.sort().toString() == defaults.sort().toString()) {
+                                    url.searchParams.set(column, '');
+                                } else {
+                                    url.searchParams.set(column, selected.join());
+                                }
+
+                                Dcat.reload(url.toString());
+                            }, 1400);
+
+                            $('.column-selector .column-select-item').on('change', function () {
+                                submit($(this));
+                            });
+                        })();;
+                        (function () {
+                            var opts = {"title":"\u65b0\u589e","area":["700px","670px"],"defaultUrl":null,"buttonSelector":".dialog-create","query":"_dialog_form_","lang":{"submit":"\u63d0\u4ea4","reset":"\u91cd\u7f6e"},"forceRefresh":false,"reset":true};
+
+                            opts.success = function (success, response) {
+                                Dcat.reload()
+                            };
+                            opts.error = function (success, response) {
+
+                            };
+                            opts.saved = function (success, response) {
+
+                            };
+
+                            Dcat.DialogForm(opts);
+                        })();;
+                        $('.grid-per-page').change(function() {
+                            Dcat.reload(this.value);
+                        });
+                    } catch (e) {
+                        console.error(e)
+                    }
+                })
+            </script>
+            <div id="admin-setting-config"class="modal fade" role="dialog">
+                <div class="modal-dialog   modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title"><i class="feather icon-edit" style="font-size: 1.5rem"></i> 网站设置</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        </div>
+                        <div class="modal-body"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="main-footer pt-1">
+    <p class="clearfix blue-grey lighten-2 mb-0 text-center">
+            <span class="text-center d-block d-md-inline-block mt-25">
+                Powered by
+                <a target="_blank" href="https://github.com/jqhph/dcat-admin">Dcat Admin</a>
+                <span>&nbsp;·&nbsp;</span>
+                v2.0.17-beta
+            </span>
+
+        <button class="btn btn-primary btn-icon scroll-top pull-right" style="position: fixed;bottom: 2%; right: 10px;display: none">
+            <i class="feather icon-arrow-up"></i>
+        </button>
+    </p>
+</footer>
+
+
+
+<script src="../static/dcat-admin/adminlte/adminlte.js"></script>
+<script src="../static/dcat-admin/dcat/plugins/extensions/toastr.min.js"></script>
+<script src="../static/dcat-admin/dcat/plugins/jquery-pjax/jquery.pjax.min.js"></script>
+<script src="../static/dcat-admin/dcat/plugins/bootstrap-validator/validator.min.js"></script>
+<script src="../static/dcat-admin/dcat/plugins/layer/layer.js"></script>
+<script src="../static/dcat-admin/dcat/plugins/jquery.initialize/jquery.initialize.min.js"></script>
+<script src="../static/dcat-admin/dcat/plugins/jstree-theme/jstree.min.js"></script>
+
+<script>Dcat.boot();</script>
+
+</body>
+
+</html>

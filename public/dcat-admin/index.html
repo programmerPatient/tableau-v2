@@ -1,0 +1,1189 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge">
+
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>Admin  | Dashboard</title>
+
+    <meta name="referrer" content="no-referrer"/>
+
+
+
+
+    <script src="./static/dcat-admin/dcat/plugins/vendors.min.js?v2.0.17-beta"></script><script src="./static/dcat-admin/dcat/js/dcat-app.js?v2.0.17-beta"></script>
+
+    <link rel="stylesheet" href="./static/dcat-admin/adminlte/adminlte.css?v2.0.17-beta"><link rel="stylesheet" href="./static/dcat-admin/dcat/plugins/vendors.min.css?v2.0.17-beta"><link rel="stylesheet" href="./static/dcat-admin/dcat/plugins/extensions/toastr.css?v2.0.17-beta"><link rel="stylesheet" href="./static/dcat-admin/dcat/plugins/tables/datatable/datatables.min.css?v2.0.17-beta"><link rel="stylesheet" href="./static/dcat-admin/dcat/css/dcat-app.css?v2.0.17-beta"><link rel="stylesheet" href="./static/dcat-admin/dcat/css/nunito.css?v2.0.17-beta">
+</head>
+
+
+<body
+        class="dcat-admin-body sidebar-mini layout-fixed
+    navbar-fixed-top " >
+
+<script>
+    var Dcat = CreateDcat({"pjax_container_selector":"#pjax-container","token":"aYatgoV2Kxiw3EobZraDENOs1N48ShfTPegnPSFD","lang":{"delete_confirm":"Are you sure to delete this item ?","confirm":"Confirm","cancel":"Cancel","refresh_succeeded":"Refresh succeeded !","close":"Close","selected_options":":num options selected","exceed_max_item":"Maximum items exceeded.","500":"Internal server error !","403":"Permission deny !","401":"Unauthorized !","419":"Page expired !"},"colors":{"info":"#3085d6","success":"#21b978","danger":"#ea5455","warning":"#dda451","indigo":"#5c6bc6","blue":"#3085d6","red":"#ea5455","orange":"#dda451","green":"#21b978","cyan":"#7367f0","purple":"#5b69bc","custom":"#59a9f8","pink":"#ff8acc","dark":"#22292f","white":"#fff","white50":"hsla(0,0%,100%,.5)","blue1":"#007ee5","blue2":"#3d97dd","orange1":"#ffcc80","orange2":"#F99037","yellow":"#edc30e","indigo-darker":"#495abf","red-darker":"#bd4147","blue-darker":"#236bb0","cyan-darker":"#6355ee","gray":"#b9c3cd","light":"#f7f7f9","tear":"#01847f","tear1":"#00b5b5","dark20":"#f6fbff","dark30":"#f4f7fa","dark35":"#e7eef7","dark40":"#ebf0f3","dark50":"#d3dde5","dark60":"#bacad6","dark70":"#b3b9bf","dark80":"#7c858e","dark85":"#5c7089","dark90":"#252d37","font":"#414750","gray-bg":"#f1f1f1","border":"#ebeff2","input-border":"#d9d9d9","background":"#eff3f8","dark-mode-bg":"#2c2c43","dark-mode-color":"#222233","dark-mode-color2":"#1e1e2d","dark-mode-font":"##a8a9bb","primary":"#586cb1","primary-darker":"#4c60a3","link":"#4c60a3"},"dark_mode":false,"sidebar_dark":false,"sidebar_light_style":"sidebar-light-primary"});
+</script>
+
+
+
+<div class="wrapper">
+    <div class="main-menu">
+        <div class="main-menu-content">
+            <aside class="main-sidebar sidebar-light-primary shadow">
+                <div class="navbar-header">
+                    <ul class="nav navbar-nav flex-row">
+                        <li class="nav-item mr-auto">
+                            <a href="http://103.39.211.179:8080/admin" class="navbar-brand waves-effect waves-light">
+                                <span class="logo-mini"><img src="./static/dcat-admin/images/logo.png"></span>
+                                <span class="logo-lg"><img src="./static/dcat-admin/images/logo.png" width="35"> &nbsp;Dcat Admin</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sidebar p-0 pb-3">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" style="padding-top: 10px">
+
+
+                        <li class="nav-item">
+                            <a  href="http://103.39.211.179:8080/admin" class="nav-link active">
+                                <i class="fa fa-fw feather icon-bar-chart-2"></i>
+                                <p>
+                                    Index
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview ">
+                            <a href="#" class="nav-link">
+                                <i class="fa fa-fw feather icon-settings"></i>
+                                <p>
+                                    Admin
+                                    <i class="right fa fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/auth/users" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-circle"></i>
+                                        <p>
+                                            Users
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/auth/roles" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-circle"></i>
+                                        <p>
+                                            Roles
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/auth/permissions" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-circle"></i>
+                                        <p>
+                                            Permission
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/auth/menu" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-circle"></i>
+                                        <p>
+                                            Menu
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/auth/operation-logs" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-circle"></i>
+                                        <p>
+                                            Operation Log
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                        <li class="nav-item has-treeview ">
+                            <a href="#" class="nav-link">
+                                <i class="fa fa-fw fa fa-keyboard-o"></i>
+                                <p>
+                                    Helpers
+                                    <i class="right fa fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/auth/extensions" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-circle"></i>
+                                        <p>
+                                            Extensions
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/helpers/scaffold" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-circle"></i>
+                                        <p>
+                                            Scaffold
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/helpers/icons" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-circle"></i>
+                                        <p>
+                                            Icons
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a  href="http://103.39.211.179:8080/admin/layout" class="nav-link ">
+                                <i class="fa fa-fw fa-cubes"></i>
+                                <p>
+                                    布局
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview ">
+                            <a href="#" class="nav-link">
+                                <i class="fa fa-fw feather icon-grid"></i>
+                                <p>
+                                    列表
+                                    <i class="right fa fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/components/grid" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-menu"></i>
+                                        <p>
+                                            默认表格
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/reports" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-menu"></i>
+                                        <p>
+                                            组合表头
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/fixed-columns" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-menu"></i>
+                                        <p>
+                                            固定列
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/with-border" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-menu"></i>
+                                        <p>
+                                            边框模式+异步加载
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/tree" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-align-left"></i>
+                                        <p>
+                                            树
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/tables/selector" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-menu"></i>
+                                        <p>
+                                            筛选器
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/grid/custom" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-image"></i>
+                                        <p>
+                                            自定义视图
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/row-space" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-menu"></i>
+                                        <p>
+                                            行间距模式
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item has-treeview ">
+                            <a href="#" class="nav-link">
+                                <i class="fa fa-fw feather icon-edit"></i>
+                                <p>
+                                    表单
+                                    <i class="right fa fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/form" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-edit-1"></i>
+                                        <p>
+                                            表单字段
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/form/modal" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-edit-1"></i>
+                                        <p>
+                                            弹窗表单
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/form/step" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw  fa-list-ol"></i>
+                                        <p>
+                                            分步表单
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/form/when" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-edit-1"></i>
+                                        <p>
+                                            表单动态显示
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a  href="http://103.39.211.179:8080/admin/full" class="nav-link ">
+                                <i class="fa fa-fw fa-cut"></i>
+                                <p>
+                                    Full Page
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview ">
+                            <a href="#" class="nav-link">
+                                <i class="fa fa-fw fa-building"></i>
+                                <p>
+                                    组件
+                                    <i class="right fa fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/components/metric-cards" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw  fa  fa-line-chart"></i>
+                                        <p>
+                                            数据统计卡片
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/components/modal" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw  fa fa-clone"></i>
+                                        <p>
+                                            Modal
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/components/dropdown-menu" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw fa-list-ol"></i>
+                                        <p>
+                                            Dropdown
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/components/tab-button" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw fa-btc"></i>
+                                        <p>
+                                            Tab &amp; Button
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/components/checkbox-radio" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw fa-check-square-o"></i>
+                                        <p>
+                                            Checkbox &amp; Radio
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/components/alert" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw fa-circle-o-notch"></i>
+                                        <p>
+                                            Alert
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/components/markdown" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw fa-trademark"></i>
+                                        <p>
+                                            Markdown
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/components/tooltip" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw fa-info-circle"></i>
+                                        <p>
+                                            Tooltip
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/components/loading" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw fa-spin fa-circle-o-notch"></i>
+                                        <p>
+                                            Loading
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item has-treeview ">
+                            <a href="#" class="nav-link">
+                                <i class="fa fa-fw fa-film"></i>
+                                <p>
+                                    Data From Api
+                                    <i class="right fa fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/movies/in-theaters" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-circle"></i>
+                                        <p>
+                                            In Theaters
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/movies/coming-soon" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-circle"></i>
+                                        <p>
+                                            Coming Soon
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/movies/top250" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-circle"></i>
+                                        <p>
+                                            Top 250
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item has-treeview ">
+                            <a href="#" class="nav-link">
+                                <i class="fa fa-fw fa-underline"></i>
+                                <p>
+                                    编辑器
+                                    <i class="right fa fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/form/tinymce" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-circle"></i>
+                                        <p>
+                                            TinyMCE
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/form/markdown" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-circle"></i>
+                                        <p>
+                                            Markdown
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a  href="http://103.39.211.179:8080/admin/extensions/ueditor" class="nav-link ">
+                                        &nbsp;<i class="fa fa-fw feather icon-circle"></i>
+                                        <p>
+                                            UEditor
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </div>
+    <nav class="header-navbar navbar-expand-lg navbar
+    navbar-with-menu fixed-top
+
+        navbar-light navbar-shadow " style="top: 0;">
+
+        <div class="navbar-wrapper">
+            <div class="navbar-container content">
+                <div class="mr-auto float-left bookmark-wrapper d-flex align-items-center">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item mr-auto">
+                            <a class="nav-link menu-toggle" data-widget="pushmenu" style="cursor: pointer;">
+                                <i class="fa fa-bars font-md-2"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="navbar-collapse">
+                    <div class="mr-auto float-left bookmark-wrapper d-flex align-items-center">
+
+                    </div>
+                    <div class="float-right d-flex align-items-center">
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                &nbsp;
+                                <a style="cursor: pointer" onclick="window.open('https://github.com/jqhph/dcat-admin-demo')">
+                                    <i class="feather icon-github" style="font-size: 1.5rem"></i> DEMO源码下载
+                                </a>
+                                &nbsp; &nbsp;
+                            </li>
+                        </ul> <span style="cursor: pointer" data-toggle="modal" data-target="#admin-setting-config"><ul class="nav navbar-nav">
+     <li class="nav-item"> &nbsp;<i class="feather icon-edit" style="font-size: 1.5rem"></i> 网站设置 &nbsp;</li>
+</ul> </span><ul class="nav navbar-nav">
+                        <li class="dropdown dropdown-notification nav-item">
+                            <a class="nav-link nav-link-label" href="#" data-toggle="dropdown" aria-expanded="true"><i class="ficon feather icon-bell"></i><span class="badge badge-pill badge-primary badge-up">5</span></a>
+                            <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right ">
+                                <li class="dropdown-menu-header">
+                                    <div class="dropdown-header m-0 p-2">
+                                        <h3 class="white">5 New</h3><span class="grey darken-2">App Notifications</span>
+                                    </div>
+                                </li>
+                                <li class="scrollable-container media-list ps ps--active-y">
+                                    <a class="d-flex justify-content-between" href="javascript:void(0)">
+                                        <div class="media d-flex align-items-start">
+                                            <div class="media-left"><i class="feather icon-plus-square font-medium-5 primary"></i></div>
+                                            <div class="media-body">
+                                                <h6 class="primary media-heading">You have new order!</h6><small class="notification-text"> Are
+                                                your going to meet me
+                                                tonight?</small>
+                                            </div><small>
+                                            <time class="media-meta" datetime="2015-06-11T18:29:20+08:00">9 hours
+                                                ago</time></small>
+                                        </div>
+                                    </a><a class="d-flex justify-content-between" href="javascript:void(0)">
+                                    <div class="media d-flex align-items-start">
+                                        <div class="media-left"><i class="feather icon-download-cloud font-medium-5 success"></i></div>
+                                        <div class="media-body">
+                                            <h6 class="success media-heading red darken-1">99% Server load</h6>
+                                            <small class="notification-text">You got new order of goods.</small>
+                                        </div><small>
+                                        <time class="media-meta" datetime="2015-06-11T18:29:20+08:00">5 hour
+                                            ago</time></small>
+                                    </div>
+                                </a><a class="d-flex justify-content-between" href="javascript:void(0)">
+                                    <div class="media d-flex align-items-start">
+                                        <div class="media-left"><i class="feather icon-alert-triangle font-medium-5 danger"></i></div>
+                                        <div class="media-body">
+                                            <h6 class="danger media-heading yellow darken-3">Warning notifixation
+                                            </h6><small class="notification-text">Server have 99% CPU usage.</small>
+                                        </div><small>
+                                        <time class="media-meta" datetime="2015-06-11T18:29:20+08:00">Today</time></small>
+                                    </div>
+                                </a>
+                                    <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; right: 0px; height: 254px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 184px;"></div></div></li>
+                                <li class="dropdown-menu-footer"><a class="dropdown-item p-1 text-center" href="javascript:void(0)">Read
+                                    all notifications</a></li>
+                            </ul>
+                        </li>
+                    </ul><ul class="nav navbar-nav float-right">
+                        <li class="dropdown dropdown-user nav-item">
+                            <a class="dropdown-toggle nav-link">
+            <span class="dark-mode-switcher">
+                <i class="feather icon-moon"></i>
+            </span>
+                            </a>
+                        </li>
+                    </ul>
+
+                        <script>
+                            Dcat.darkMode.initSwitcher('.dark-mode-switcher');
+                        </script>
+                    </div>
+                    <ul class="nav navbar-nav float-right">
+
+                        <li class="dropdown dropdown-user nav-item">
+                            <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
+                                <div class="user-nav d-sm-flex d-none">
+                                    <span class="user-name text-bold-600">Administrator</span>
+                                    <span class="user-status"><i class="fa fa-circle text-success"></i> Online</span>
+                                </div>
+                                <span>
+            <img class="round" src="./static/dcat-admin/images/default-avatar.jpg" alt="avatar" height="40" width="40" />
+        </span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a href="http://103.39.211.179:8080/admin/auth/setting" class="dropdown-item">
+                                    <i class="feather icon-user"></i> Setting
+                                </a>
+
+                                <div class="dropdown-divider"></div>
+
+                                <a class="dropdown-item" href="http://103.39.211.179:8080/admin/auth/logout">
+                                    <i class="feather icon-power"></i> Logout
+                                </a>
+                            </div>
+                        </li>
+
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <ul class="main-search-list-defaultlist d-none">
+
+    </ul>
+    <ul class="main-search-list-defaultlist-other-list d-none">
+        <li class="auto-suggestion d-flex align-items-center justify-content-between cursor-pointer">
+            <a class="d-flex align-items-center justify-content-between w-100 py-50">
+                <div class="d-flex justify-content-start"><span class="mr-75 feather icon-alert-circle"></span><span>No
+results found.</span></div>
+            </a>
+        </li>
+    </ul>
+    <script>
+        $('.menu-toggle').on('click', function () {
+            $(this).find('i').toggleClass('icon-circle icon-disc')
+        })
+    </script>
+
+    <div class="app-content content">
+        <div class="content-wrapper" id="pjax-container" style="top: 0;min-height: 900px;">
+            <style>.main-sidebar .nav-sidebar .nav-item>.nav-link {
+                border-radius: .1rem;
+            }</style>
+
+            <div class="content-header">
+                <section class="content-header breadcrumbs-top">
+                    <h1 class=" float-left">
+                        <span class="text-capitalize">Dashboard</span>
+                        <small>Description...</small>
+                    </h1>
+
+                    <div class="breadcrumb-wrapper col-12">
+                        <ol class="breadcrumb float-right text-capitalize">
+                            <li class="breadcrumb-item"><a href="http://103.39.211.179:8080/admin"><i class="fa fa-dashboard"></i> home</a></li>
+                        </ol>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                </section>
+            </div>
+
+            <div class="content-body" id="app">
+
+
+
+
+                <div class="row"><div class="col-md-6"><div class="row"><div class="col-md-12"><style>
+                    .dashboard-title .links {
+                        text-align: center;
+                        margin-bottom: 2.5rem;
+                    }
+                    .dashboard-title .links > a {
+                        padding: 0 25px;
+                        font-size: 12px;
+                        font-weight: 600;
+                        letter-spacing: .1rem;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        color: #fff;
+                    }
+                    .dashboard-title h1 {
+                        font-weight: 200;
+                        font-size: 2.5rem;
+                    }
+                    .dashboard-title .avatar {
+                        background: #fff;
+                        border: 2px solid #fff;
+                        width: 70px;
+                        height: 70px;
+                    }
+                </style>
+
+                    <div class="dashboard-title card bg-primary">
+                        <div class="card-body">
+                            <div class="text-center ">
+                                <img class="avatar img-circle shadow mt-1" src="./static/dcat-admin/images/logo.png">
+
+                                <div class="text-center mb-1">
+                                    <h1 class="mb-3 mt-2 text-white">Dcat Admin</h1>
+                                    <div class="links">
+                                        <a href="https://github.com/jqhph/dcat-admin" target="_blank">Github</a>
+                                        <a href="http://www.dcatadmin.com/" id="doc-link" target="_blank">Documentation</a>
+                                        <a href="http://www.dcatadmin.com/" id="demo-link" target="_blank">Extensions</a>
+                                        <a href="https://jqhph.github.io/dcat-admin/demo.html" id="demo-link" target="_blank">Demo</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div></div></div><div class="row"><div class="col-md-12"><div id="metric-card-OmhOhiYO" class="card" style=" min-height:400px;">
+                    <div class="card-header d-flex justify-content-between align-items-start pb-0">
+                        <div>
+
+                            <h4 class="card-title mb-1">Tickets</h4>
+
+                            <div class="metric-header"></div>
+                        </div>
+
+
+                        <div class="dropdown chart-dropdown">
+                            <button class="btn btn-sm btn-light shadow-0 dropdown-toggle p-0 waves-effect" data-toggle="dropdown">
+                                Last 7 Days
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <li class="dropdown-item"><a href="javascript:void(0)" class="select-option" data-option="7">Last 7 Days</a></li>
+                                <li class="dropdown-item"><a href="javascript:void(0)" class="select-option" data-option="28">Last 28 Days</a></li>
+                                <li class="dropdown-item"><a href="javascript:void(0)" class="select-option" data-option="30">Last Month</a></li>
+                                <li class="dropdown-item"><a href="javascript:void(0)" class="select-option" data-option="365">Last Year</a></li>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="metric-content"><div class="card-content">
+                        <div class="row">
+                            <div class="metric-content col-sm-2">
+
+                            </div>
+
+                            <div class="col-sm-10 d-flex justify-content-center">
+                                <div></div>
+                                <div><div style=";margin-right: 1px;" id="apex-chart-UBslTFph"></div></div>
+                            </div>
+                        </div>
+                        <div class="metric-footer">
+
+                        </div>
+                    </div></div>
+                </div></div></div></div><div class="col-md-6"><div class="row"><div class="col-md-6"><div id="metric-card-iF8R4XF4" class="card" style=" min-height:165px;">
+                    <div class="card-header d-flex justify-content-between align-items-start pb-0">
+                        <div>
+
+                            <h4 class="card-title mb-1">New Users</h4>
+
+                            <div class="metric-header"></div>
+                        </div>
+
+
+                        <div class="dropdown chart-dropdown">
+                            <button class="btn btn-sm btn-light shadow-0 dropdown-toggle p-0 waves-effect" data-toggle="dropdown">
+                                Last 7 Days
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <li class="dropdown-item"><a href="javascript:void(0)" class="select-option" data-option="7">Last 7 Days</a></li>
+                                <li class="dropdown-item"><a href="javascript:void(0)" class="select-option" data-option="28">Last 28 Days</a></li>
+                                <li class="dropdown-item"><a href="javascript:void(0)" class="select-option" data-option="30">Last Month</a></li>
+                                <li class="dropdown-item"><a href="javascript:void(0)" class="select-option" data-option="365">Last Year</a></li>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="metric-content">
+                        <div class="card-content">
+                            <div style=";margin-right:-6px;;margin-right: 1px;" id="apex-chart-YFdQ68BW"></div>
+                        </div></div>
+                </div></div><div class="col-md-6"><div id="metric-card-POOIMqvl" class="card" style=" min-height:165px;">
+                    <div class="card-header d-flex justify-content-between align-items-start pb-0">
+                        <div>
+
+                            <h4 class="card-title mb-1">New Devices</h4>
+
+                            <div class="metric-header"></div>
+                        </div>
+
+                        <span class="btn btn-sm bg-light shadow-0 p-0">
+                Last 30 days
+            </span>
+
+                    </div>
+
+                    <div class="metric-content"><div class="d-flex row justify-content-between">
+                        <div class="col-sm-6 justify-content-center">
+                            <div class="d-flex pl-1 pr-1 pt-1" style="margin-bottom: 8px">
+                                <div style="width: 120px">
+                                    <i class="fa fa-circle text-primary"></i> Desktop
+                                </div>
+                                <div>44.9</div>
+                            </div>
+                            <div class="d-flex pl-1 pr-1" style="margin-bottom: 8px">
+                                <div style="width: 120px">
+                                    <i class="fa fa-circle" style="color: rgba(61, 151, 221, 0.5)"></i> Mobile
+                                </div>
+                                <div>28.6</div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6" style="margin-right: -15px;">
+                            <div style=";margin: 10px 5px 0 0;width: 150px;float:right;;margin-top: 5px;;margin-right: 1px;" id="apex-chart-zcPiCtx8"></div>
+                        </div>
+                    </div></div>
+                </div></div></div><div class="row"><div class="col-md-12"><div id="metric-card-Bx0SnANv" class="card" style=" min-height:250px;">
+                    <div class="card-header d-flex justify-content-between align-items-start pb-0">
+                        <div>
+
+                            <h4 class="card-title mb-1">Avg Sessions</h4>
+
+                            <div class="metric-header"></div>
+                        </div>
+
+
+                        <div class="dropdown chart-dropdown">
+                            <button class="btn btn-sm btn-light shadow-0 dropdown-toggle p-0 waves-effect" data-toggle="dropdown">
+                                Last 7 Days
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <li class="dropdown-item"><a href="javascript:void(0)" class="select-option" data-option="7">Last 7 Days</a></li>
+                                <li class="dropdown-item"><a href="javascript:void(0)" class="select-option" data-option="28">Last 28 Days</a></li>
+                                <li class="dropdown-item"><a href="javascript:void(0)" class="select-option" data-option="30">Last Month</a></li>
+                                <li class="dropdown-item"><a href="javascript:void(0)" class="select-option" data-option="365">Last Year</a></li>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="metric-content"><div class="card-content">
+                        <div class="row">
+                            <div class="metric-content col-sm-5">
+
+                            </div>
+
+                            <div class="col-sm-7 d-flex justify-content-between">
+                                <div></div>
+                                <div><div style=";margin-right: 1px;" id="apex-chart-7K92Pk6o"></div></div>
+                            </div>
+                        </div>
+                        <div class="metric-footer">
+
+                        </div>
+                    </div></div>
+                </div></div></div><div class="row"><div class="col-md-12"><div id="metric-card-fcY4PFpT" class="card" style=" min-height:250px;">
+                    <div class="card-header d-flex justify-content-between align-items-start pb-0">
+                        <div>
+
+                            <h4 class="card-title mb-1">Product Orders</h4>
+
+                            <div class="metric-header"></div>
+                        </div>
+
+
+                        <div class="dropdown chart-dropdown">
+                            <button class="btn btn-sm btn-light shadow-0 dropdown-toggle p-0 waves-effect" data-toggle="dropdown">
+                                Last 7 Days
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <li class="dropdown-item"><a href="javascript:void(0)" class="select-option" data-option="7">Last 7 Days</a></li>
+                                <li class="dropdown-item"><a href="javascript:void(0)" class="select-option" data-option="28">Last 28 Days</a></li>
+                                <li class="dropdown-item"><a href="javascript:void(0)" class="select-option" data-option="30">Last Month</a></li>
+                                <li class="dropdown-item"><a href="javascript:void(0)" class="select-option" data-option="365">Last Year</a></li>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="metric-content"><div class="card-content">
+                        <div class="row">
+                            <div class="metric-content col-sm-5">
+
+                            </div>
+
+                            <div class="col-sm-7 d-flex justify-content-center">
+                                <div></div>
+                                <div><div style=";margin-top: -10px;;margin-bottom: -20px;;margin-right: 1px;" id="apex-chart-71mS5wX1"></div></div>
+                            </div>
+                        </div>
+                        <div class="metric-footer">
+
+                        </div>
+                    </div></div>
+                </div></div></div></div></div>
+
+
+
+
+            </div>
+
+            <script data-exec-on-popstate>
+                (function () {
+                    try {
+
+                    } catch (e) {
+                        console.error(e)
+                    }
+                })();
+                Dcat.ready(function () {
+                    try {
+                        (function () {
+                            var target = $('#admin-setting-config'), body = target.find('.modal-body');
+                            target.on('modal:load', function () {
+                                Dcat.helpers.asyncRender('http://103.39.211.179:8080/admin/dcat-api/render?_current_=http%3A%2F%2F103.39.211.179%3A8080%2Fadmin%3F&renderable=App_Admin_Forms_AdminSetting', function (html) {
+                                    body.html(html);
+
+
+
+                                    target.trigger('modal:loaded');
+                                });
+                            });
+                            target.on('show.bs.modal', function (event) {
+                                body.html('<div style="min-height:150px"></div>').loading();
+
+                                setTimeout(function () {
+                                    target.trigger('modal:load')
+                                }, 10);
+                            });
+                        })();;
+                        Dcat.token = "aYatgoV2Kxiw3EobZraDENOs1N48ShfTPegnPSFD";;
+                        (function () {
+                            var loading;
+                            function request(data) {
+                                if (loading) {
+                                    return;
+                                }
+                                loading = 1;
+
+                                data = $.extend({"_key":"App\\Admin\\Metrics\\Examples\\Tickets"}, data || {});
+
+                                var $card = $('#metric-card-OmhOhiYO');
+                                $card.loading();;
+
+                                $.ajax({
+                                    url: 'http://103.39.211.179:8080/admin/dcat-api/value',
+                                    dataType: 'json',
+                                    method: 'POST',
+                                    data: data,
+                                    success: function (response) {
+                                        loading = 0;
+                                        $card.loading(false);
+                                        $card.find('.metric-header').html(response.header);
+                                        $card.find('.metric-content').html(response.content);;if (! response.status) {
+                                            return Dcat.error(response.message || 'Server internal error.');
+                                        }
+
+                                        var chartBox = $(response.selector || '#apex-chart-UBslTFph');
+
+                                        if (chartBox.length) {
+                                            chartBox.html('');
+
+                                            if (typeof response.options === 'string') {
+                                                eval(response.options);
+                                            }
+
+                                            setTimeout(function () {
+                                                new ApexCharts(chartBox[0], response.options).render();
+                                            }, 50);
+                                        };
+                                    },
+                                    error: function (a, b, c) {
+                                        loading = 0;
+                                        Dcat.handleAjaxError(a, b, c)
+                                    },
+                                });
+                            }
+
+                            request();
+
+                            $('#metric-card-OmhOhiYO .dropdown .select-option').on('click', function () {
+                                request($(this).data())
+                            });
+                        })();;
+                        $('#metric-card-OmhOhiYO .dropdown .select-option').on('click', function () {
+                            $(this).parents('.dropdown').find('.btn').html($(this).text());
+                        });
+
+                        ;
+                        (function () {
+                            var loading;
+                            function request(data) {
+                                if (loading) {
+                                    return;
+                                }
+                                loading = 1;
+
+                                data = $.extend({"_key":"App\\Admin\\Metrics\\Examples\\NewUsers"}, data || {});
+
+                                var $card = $('#metric-card-iF8R4XF4');
+                                $card.loading();;
+
+                                $.ajax({
+                                    url: 'http://103.39.211.179:8080/admin/dcat-api/value',
+                                    dataType: 'json',
+                                    method: 'POST',
+                                    data: data,
+                                    success: function (response) {
+                                        loading = 0;
+                                        $card.loading(false);
+                                        $card.find('.metric-header').html(response.header);
+                                        $card.find('.metric-content').html(response.content);;if (! response.status) {
+                                            return Dcat.error(response.message || 'Server internal error.');
+                                        }
+
+                                        var chartBox = $(response.selector || '#apex-chart-YFdQ68BW');
+
+                                        if (chartBox.length) {
+                                            chartBox.html('');
+
+                                            if (typeof response.options === 'string') {
+                                                eval(response.options);
+                                            }
+
+                                            setTimeout(function () {
+                                                new ApexCharts(chartBox[0], response.options).render();
+                                            }, 50);
+                                        };
+                                    },
+                                    error: function (a, b, c) {
+                                        loading = 0;
+                                        Dcat.handleAjaxError(a, b, c)
+                                    },
+                                });
+                            }
+
+                            request();
+
+                            $('#metric-card-iF8R4XF4 .dropdown .select-option').on('click', function () {
+                                request($(this).data())
+                            });
+                        })();;
+                        $('#metric-card-iF8R4XF4 .dropdown .select-option').on('click', function () {
+                            $(this).parents('.dropdown').find('.btn').html($(this).text());
+                        });
+
+                        ;
+                        (function () {
+                            var options = {"chart":{"type":"donut","toolbar":{"show":false},"height":100},"colors":["#586cb1","rgba(61, 151, 221, 0.5)"],"legend":{"show":false},"dataLabels":{"enabled":false},"stroke":{"width":0},"plotOptions":{"pie":{"donut":{"size":"75%"}}},"labels":["Desktop","Mobile"],"series":[44.9,28.6]};
+
+                            var chart = new ApexCharts(
+                                $("#apex-chart-zcPiCtx8")[0],
+                                options
+                            );
+                            chart.render();
+                        })();;
+                        (function () {
+                            var loading;
+                            function request(data) {
+                                if (loading) {
+                                    return;
+                                }
+                                loading = 1;
+
+                                data = $.extend({"_key":"App\\Admin\\Metrics\\Examples\\Sessions"}, data || {});
+
+                                var $card = $('#metric-card-Bx0SnANv');
+                                $card.loading();;
+
+                                $.ajax({
+                                    url: 'http://103.39.211.179:8080/admin/dcat-api/value',
+                                    dataType: 'json',
+                                    method: 'POST',
+                                    data: data,
+                                    success: function (response) {
+                                        loading = 0;
+                                        $card.loading(false);
+                                        $card.find('.metric-header').html(response.header);
+                                        $card.find('.metric-content').html(response.content);;if (! response.status) {
+                                            return Dcat.error(response.message || 'Server internal error.');
+                                        }
+
+                                        var chartBox = $(response.selector || '#apex-chart-7K92Pk6o');
+
+                                        if (chartBox.length) {
+                                            chartBox.html('');
+
+                                            if (typeof response.options === 'string') {
+                                                eval(response.options);
+                                            }
+
+                                            setTimeout(function () {
+                                                new ApexCharts(chartBox[0], response.options).render();
+                                            }, 50);
+                                        };
+                                    },
+                                    error: function (a, b, c) {
+                                        loading = 0;
+                                        Dcat.handleAjaxError(a, b, c)
+                                    },
+                                });
+                            }
+
+                            request();
+
+                            $('#metric-card-Bx0SnANv .dropdown .select-option').on('click', function () {
+                                request($(this).data())
+                            });
+                        })();;
+                        $('#metric-card-Bx0SnANv .dropdown .select-option').on('click', function () {
+                            $(this).parents('.dropdown').find('.btn').html($(this).text());
+                        });
+
+                        ;
+                        (function () {
+                            var loading;
+                            function request(data) {
+                                if (loading) {
+                                    return;
+                                }
+                                loading = 1;
+
+                                data = $.extend({"_key":"App\\Admin\\Metrics\\Examples\\ProductOrders"}, data || {});
+
+                                var $card = $('#metric-card-fcY4PFpT');
+                                $card.loading();;
+
+                                $.ajax({
+                                    url: 'http://103.39.211.179:8080/admin/dcat-api/value',
+                                    dataType: 'json',
+                                    method: 'POST',
+                                    data: data,
+                                    success: function (response) {
+                                        loading = 0;
+                                        $card.loading(false);
+                                        $card.find('.metric-header').html(response.header);
+                                        $card.find('.metric-content').html(response.content);;if (! response.status) {
+                                            return Dcat.error(response.message || 'Server internal error.');
+                                        }
+
+                                        var chartBox = $(response.selector || '#apex-chart-71mS5wX1');
+
+                                        if (chartBox.length) {
+                                            chartBox.html('');
+
+                                            if (typeof response.options === 'string') {
+                                                eval(response.options);
+                                            }
+
+                                            setTimeout(function () {
+                                                new ApexCharts(chartBox[0], response.options).render();
+                                            }, 50);
+                                        };
+                                    },
+                                    error: function (a, b, c) {
+                                        loading = 0;
+                                        Dcat.handleAjaxError(a, b, c)
+                                    },
+                                });
+                            }
+
+                            request();
+
+                            $('#metric-card-fcY4PFpT .dropdown .select-option').on('click', function () {
+                                request($(this).data())
+                            });
+                        })();;
+                        $('#metric-card-fcY4PFpT .dropdown .select-option').on('click', function () {
+                            $(this).parents('.dropdown').find('.btn').html($(this).text());
+                        });
+
+
+                    } catch (e) {
+                        console.error(e)
+                    }
+                })
+            </script>
+            <div id="admin-setting-config"class="modal fade" role="dialog">
+                <div class="modal-dialog   modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title"><i class="feather icon-edit" style="font-size: 1.5rem"></i> 网站设置</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        </div>
+                        <div class="modal-body"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="main-footer pt-1">
+    <p class="clearfix blue-grey lighten-2 mb-0 text-center">
+            <span class="text-center d-block d-md-inline-block mt-25">
+                Powered by
+                <a target="_blank" href="https://github.com/jqhph/dcat-admin">Dcat Admin</a>
+                <span>&nbsp;·&nbsp;</span>
+                v2.0.17-beta
+            </span>
+
+        <button class="btn btn-primary btn-icon scroll-top pull-right" style="position: fixed;bottom: 2%; right: 10px;display: none">
+            <i class="feather icon-arrow-up"></i>
+        </button>
+    </p>
+</footer>
+
+
+
+<script src="./static/dcat-admin/adminlte/adminlte.js?v2.0.17-beta"></script><script src="./static/dcat-admin/dcat/plugins/extensions/toastr.min.js?v2.0.17-beta"></script><script src="./static/dcat-admin/dcat/plugins/jquery-pjax/jquery.pjax.min.js?v2.0.17-beta"></script><script src="./static/dcat-admin/dcat/plugins/bootstrap-validator/validator.min.js?v2.0.17-beta"></script><script src="./static/dcat-admin/dcat/plugins/layer/layer.js?v2.0.17-beta"></script><script src="./static/dcat-admin/dcat/plugins/jquery.initialize/jquery.initialize.min.js?v2.0.17-beta"></script><script src="./static/dcat-admin/dcat/plugins/charts/apexcharts.min.js?v2.0.17-beta"></script>
+
+<script>Dcat.boot();</script>
+
+</body>
+
+</html>
